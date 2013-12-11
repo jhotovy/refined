@@ -17,3 +17,14 @@ require_once locate_template('/lib/relative-urls.php');   // Root relative URLs
 require_once locate_template('/lib/widgets.php');         // Sidebars and widgets
 require_once locate_template('/lib/scripts.php');         // Scripts and stylesheets
 require_once locate_template('/lib/custom.php');          // Custom functions
+
+add_filter('nav_menu_css_class', 'filter_nav_menu_css_class', 10, 2);
+
+function filter_nav_menu_css_class($classes, $item)
+{
+	if (is_single() && strcasecmp($item->title, 'blog') == 0)
+	{
+		$classes[] = 'active';
+	}
+	return $classes;
+}
