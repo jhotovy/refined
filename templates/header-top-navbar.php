@@ -1,6 +1,6 @@
 <header class="logo-header">
   <div class="container">
-    <img class="logo" src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" />
+    <a href="<?php echo get_home_url(); ?>"><img class="logo" src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" /></a>
   </div>
 </header>
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
@@ -19,6 +19,23 @@
           wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
         endif;
       ?>
+      <ul class="nav navbar-nav navbar-right">
+        <?php if (is_user_logged_in()) : ?>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!--<b class="caret"></b>&nbsp&nbsp<?php echo bp_core_get_user_displayname(bp_loggedin_user_id()); ?> -->
+              <b class="caret"></b>&nbsp&nbsp<?php echo wp_get_current_user()->display_name; ?>
+              <?php echo get_avatar(get_current_user_id(), 26); ?>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="<?php echo wp_logout_url(get_permalink()); ?>">Logout</a></li>
+            </ul>
+          </li>
+        <?php else : ?>
+          <li><a href="<?php echo wp_login_url(get_permalink()); ?>">Login</a></li>
+          <li><a href="<?php echo get_home_url(); ?>/register">Join</a></li>
+        <?php endif; ?>
+      </ul>
     </nav>
   </div>
 </header>
