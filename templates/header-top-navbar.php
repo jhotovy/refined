@@ -1,6 +1,8 @@
-<div class="container">
-  <img class="logo" src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" />
-</div>
+<header class="logo-header">
+  <div class="container">
+    <img class="logo" src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" />
+  </div>
+</header>
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
   <div class="container">
     <div class="navbar-header">
