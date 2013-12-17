@@ -24,6 +24,12 @@ body
    box-shadow: 5px 5px 5px @gray-light;
 }
 
+input[type="submit"]
+{
+   .btn;
+   .btn-primary;
+}
+
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -84,7 +90,31 @@ body
 
 .content-info { }
 
+/* ==========================================================================
+   bbPress
+   ========================================================================== */
 
+#bbpress-forums
+{
+   button
+   {
+      .btn;
+      .btn-primary;
+   }
+   select
+   {
+      .form-control;
+   }
+   input[type="text"]
+   {
+      .form-control;
+   }
+   #subscription-toggle
+   {
+      display: block;
+      float: right;
+   }
+}
 
 /* ==========================================================================
    WordPress Generated Classes
@@ -95,8 +125,6 @@ body
 .alignleft { float: left; }
 .alignright { float: right; }
 figure.alignnone { margin-left: 0; margin-right: 0; }
-
-
 
 /* ==========================================================================
    Media Queries
