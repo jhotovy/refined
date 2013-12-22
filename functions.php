@@ -22,7 +22,11 @@ add_filter('nav_menu_css_class', 'filter_nav_menu_css_class', 10, 2);
 
 function filter_nav_menu_css_class($classes, $item)
 {
-	if (is_single() && strcasecmp($item->title, 'blog') == 0)
+	if (is_bbpress() && strcasecmp($item->title, 'discussions') == 0)
+	{
+		$classes[] = 'active';
+	}
+	if (strcasecmp(get_post_type(), 'post') == 0 && strcasecmp($item->title, 'blog') == 0)
 	{
 		$classes[] = 'active';
 	}
