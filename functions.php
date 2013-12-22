@@ -18,17 +18,65 @@ require_once locate_template('/lib/widgets.php');         // Sidebars and widget
 require_once locate_template('/lib/scripts.php');         // Scripts and stylesheets
 require_once locate_template('/lib/custom.php');          // Custom functions
 
+/**
+ * Filters
+ */
 add_filter('nav_menu_css_class', 'filter_nav_menu_css_class', 10, 2);
+add_filter('excerpt_length', 'filter_excerpt_length', 10, 1);
 
 function filter_nav_menu_css_class($classes, $item)
 {
-	if (is_bbpress() && strcasecmp($item->title, 'discussions') == 0)
+	switch(strtolower($item->title))
 	{
-		$classes[] = 'active';
-	}
-	if (strcasecmp(get_post_type(), 'post') == 0 && strcasecmp($item->title, 'blog') == 0)
-	{
-		$classes[] = 'active';
+		case 'blog':
+		{
+			if (strcasecmp(get_the_title(), 'blog') == 0)
+			{
+				$classes[] = 'active';
+			}
+			if (strcasecmp(get_post_type(), 'post') == 0)
+			{
+				$classes[] = 'active';
+			}
+			break;
+		}
+		case 'discussions':
+		{
+			if (is_bbpress())
+			{
+				$classes[] = 'active';
+			}
+			break;
+		}
 	}
 	return $classes;
+}
+
+function filter_excerpt_length($length)
+{
+	return 75;
+}
+
+/**
+ * Helpers
+ */
+function refined_image_path($image_name)
+{
+	return get_bloginfo('template_directory') . '/assets/img/' . $image_name;
+}
+
+function refined_post_thumbnail()
+{
+	$thumbnail_class = 'img-thumbnail pull-left margin-bottom-right';
+
+	printf('<a href="%s" title="%s">', get_permalink(), get_the_title());
+	if (has_post_thumbnail())
+	{
+		the_post_thumbnail('thumbnail', array('class' => $thumbnail_class));
+	}
+	else
+	{
+		printf('<img src="%s" class="%s" width="150" height="150" />', refined_image_path('blog_post_thumbnail_default.png'), $thumbnail_class);
+	}
+	printf('</a>');
 }
