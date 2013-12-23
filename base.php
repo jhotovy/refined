@@ -27,9 +27,9 @@
         </aside><!-- /.sidebar -->
       <?php endif; ?>
       <main class="main <?php echo roots_main_class(); ?>" role="main">
-        <div class="card">
+        <?php if (!is_front_page()) : ?><div class="card"><?php endif; ?>
           <?php include roots_template_path(); ?>
-        </div>
+        <?php if (!is_front_page()) : ?></div><?php endif; ?>
       </main><!-- /.main -->
     </div><!-- /.content -->
   </div><!-- /.wrap -->

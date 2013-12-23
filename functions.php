@@ -26,6 +26,10 @@ add_filter('excerpt_length', 'filter_excerpt_length', 10, 1);
 
 function filter_nav_menu_css_class($classes, $item)
 {
+	if (is_front_page())
+	{
+		return $classes;
+	}
 	switch(strtolower($item->title))
 	{
 		case 'blog':
