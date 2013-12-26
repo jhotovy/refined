@@ -19,6 +19,11 @@ require_once locate_template('/lib/scripts.php');         // Scripts and stylesh
 require_once locate_template('/lib/custom.php');          // Custom functions
 
 /**
+ * Images
+ */
+add_image_size('front-page', 500, 330, true);
+
+/**
  * Filters
  */
 add_filter('nav_menu_css_class', 'filter_nav_menu_css_class', 10, 2);
@@ -69,18 +74,48 @@ function refined_image_path($image_name)
 	return get_bloginfo('template_directory') . '/assets/img/' . $image_name;
 }
 
-function refined_post_thumbnail()
+function refined_image_dimensions($size)
 {
-	$thumbnail_class = 'img-thumbnail pull-left margin-bottom-right';
+	switch ($size)
+	{
+		case "thumbnail": return array(150, 150);
+		case "medium": return array(300, 300);
+		case "large": return array(640, 640);
+		case "front-page": return array(500, 330);
+	}
+}
+
+function refined_featured_image($size, $class)
+{
+	$dim = refined_image_dimensions($size);
 
 	printf('<a href="%s" title="%s">', get_permalink(), get_the_title());
+	printf('<img src="%s" class="%s" width="%s" height="%s" />',
+		refined_featured_image_path($size),
+		$class,
+		$dim[0],
+		$dim[1]);
+	printf('</a>');
+}
+
+function refined_featured_image_path($size)
+{
 	if (has_post_thumbnail())
 	{
-		the_post_thumbnail('thumbnail', array('class' => $thumbnail_class));
+		return wp_get_attachment_image_src(get_post_thumbnail_id(), $size)[0];
 	}
 	else
 	{
-		printf('<img src="%s" class="%s" width="150" height="150" />', refined_image_path('blog_post_thumbnail_default.png'), $thumbnail_class);
+		switch ($size)
+		{
+			case "thumbnail":
+			{
+				return refined_image_path("featured_image_default_thumbnail.png");
+			}
+			case "front-page":
+			{
+				return refined_image_path("featured_image_default_front_page.png");
+			}
+		}
 	}
-	printf('</a>');
 }
