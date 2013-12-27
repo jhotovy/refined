@@ -1,6 +1,7 @@
 <?php query_posts(array('posts_per_page' => 4)); ?>
 
 <div class="card padding-top">
+  <h4 class="page-header">Recent Blog Posts</h4>
   <?php if (!have_posts()) : ?>
     <div class="alert alert-warning">
       <?php _e('No recent posts.', 'refined'); ?>
@@ -17,9 +18,11 @@
     <?php endwhile; ?>
   <?php if ($counter > 0) : echo '</div>'; endif; ?>
 </div>
-<div class="vertical-gutter"></div>
-<div class="card padding-top">
-  <?php echo do_shortcode('[bbp-topic-index]'); ?>
-</div>
 
 <?php wp_reset_query(); ?>
+
+<div class="vertical-gutter"></div>
+<div class="card padding-top" id="bbpress-front-page">
+  <h4 class="page-header">Discussions</h4>
+  <?php echo do_shortcode('[bbp-topic-index]'); ?>
+</div>

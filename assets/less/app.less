@@ -174,7 +174,6 @@ input[type="submit"]
 /* ==========================================================================
    bbPress
    ========================================================================== */
-
 #bbpress-forums
 {
    button
@@ -194,6 +193,19 @@ input[type="submit"]
    {
       display: block;
       float: right;
+   }
+}
+
+#bbpress-front-page
+{
+   #bbpress-forums, .bbp-topics
+   {
+      margin-bottom: 0 !important;
+   }
+
+   .bbp-pagination, .bbpress-pagination-count, .bbp-search-form
+   {
+      display: none;
    }
 }
 
