@@ -1,7 +1,7 @@
 <?php query_posts(array('posts_per_page' => 4)); ?>
 
 <div class="card padding-top">
-  <h4 class="page-header">Recent Blog Posts</h4>
+  <h4 class="page-header">Recent Posts</h4>
   <?php if (!have_posts()) : ?>
     <div class="alert alert-warning">
       <?php _e('No recent posts.', 'refined'); ?>
