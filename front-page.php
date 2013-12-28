@@ -1,7 +1,7 @@
 <?php query_posts(array('posts_per_page' => 4)); ?>
 
 <div class="card padding-top">
-  <h4 class="page-header">Recent Posts</h4>
+  <h3 class="page-header">Recent Posts</h3>
   <?php if (!have_posts()) : ?>
     <div class="alert alert-warning">
       <?php _e('No recent posts.', 'refined'); ?>
@@ -23,6 +23,6 @@
 
 <div class="vertical-gutter"></div>
 <div class="card padding-top" id="bbpress-front-page">
-  <h4 class="page-header">Discussions</h4>
+  <h3 class="page-header">Discussions</h3>
   <?php echo do_shortcode('[bbp-topic-index]'); ?>
 </div>
