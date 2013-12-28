@@ -24,7 +24,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <b class="caret"></b>&nbsp&nbsp<?php echo wp_get_current_user()->display_name; ?>
-              <?php echo get_avatar(get_current_user_id(), 26); ?>
+              <?php echo get_avatar(get_current_user_id(), 18); ?>
             </a>
             <ul class="dropdown-menu">
               <li><a href="<?php echo wp_logout_url(get_permalink()); ?>">Logout</a></li>
