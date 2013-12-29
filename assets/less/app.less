@@ -34,16 +34,16 @@ a:hover
    padding-top: @card-padding;
 }
 
-.margin-top-left
+.margin-bottom-left
 {
-   margin-top: 5px;
-   margin-left: 5px;
+   margin-bottom: @padding-base-vertical;
+   margin-left: @padding-base-horizontal;
 }
 
 .margin-bottom-right
 {
-   margin-bottom: 5px;
-   margin-right: 5px;
+   margin-bottom: @padding-base-vertical;
+   margin-right: @padding-base-horizontal;
 }
 
 .vertical-gutter
@@ -153,6 +153,25 @@ input[type="submit"]
 .hentry footer { }
 
 /* ==========================================================================
+   Images
+   ========================================================================== */
+.wp-caption
+{
+   padding: @padding-base-horizontal @padding-base-horizontal @padding-base-vertical @padding-base-horizontal;
+   background-color: black;
+}
+
+.wp-caption img
+{
+   border: 1px solid #333;
+}
+
+.wp-caption-text, .thumbnail .caption
+{
+   color: white;
+}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 
@@ -246,9 +265,21 @@ input[type="submit"]
    See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
    ========================================================================== */
 
-.aligncenter { display: block; margin: 0 auto; }
-.alignleft { float: left; }
-.alignright { float: right; }
+.aligncenter
+{
+   display: block;
+   margin: 0 auto @padding-base-vertical auto;
+}
+.alignleft
+{
+   float: left;
+   .margin-bottom-right;
+}
+.alignright
+{
+   float: right;
+   .margin-bottom-left;
+}
 figure.alignnone { margin-left: 0; margin-right: 0; }
 
 /* ==========================================================================
