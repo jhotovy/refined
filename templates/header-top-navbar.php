@@ -3,7 +3,7 @@
     <a href="<?php echo get_home_url(); ?>"><img class="logo" src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" /></a>
   </div>
 </header>
-<header class="banner navbar navbar-default navbar-static-top" role="banner">
+<header class="banner navbar navbar-inverse navbar-static-top" role="banner">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
