@@ -21,13 +21,13 @@
     <div class="content row">
       <?php if (roots_display_sidebar()) : ?>
         <aside class="sidebar <?php echo roots_sidebar_class(); ?>" role="complementary">
-          <div class="card">
+          <div class="card card-sidebar">
             <?php include roots_sidebar_path(); ?>
           </div>
         </aside><!-- /.sidebar -->
       <?php endif; ?>
       <main class="main <?php echo roots_main_class(); ?>" role="main">
-        <?php if (!is_front_page()) : ?><div class="card"><?php endif; ?>
+        <?php if (!is_front_page()) : ?><div class="card card-main"><?php endif; ?>
           <?php include roots_template_path(); ?>
         <?php if (!is_front_page()) : ?></div><?php endif; ?>
       </main><!-- /.main -->

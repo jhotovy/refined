@@ -10,4 +10,10 @@ $(document).ready(function() {
     });
 
     $('#mce-EMAIL').attr('placeholder', $('#mce-EMAIL').attr('value')).removeAttr('value');
+
+    var sidebarHeight = Math.max($('.card-sidebar').height(), $('.card-main').height());
+    if (sidebarHeight > $('.card-sidebar').height())
+    {
+		$('.card-sidebar').height(sidebarHeight);
+    }
 });
