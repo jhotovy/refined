@@ -31,9 +31,15 @@ add_filter('excerpt_length', 'filter_excerpt_length', 10, 1);
 
 function filter_nav_menu_css_class($classes, $item)
 {
+	$active_class = 'active';
 	$classes[] = 'wp-menu-item';
+
 	if (is_front_page())
 	{
+		if (strcasecmp($item->title, 'home') == 0)
+		{
+			$classes[] = $active_class;
+		}
 		return $classes;
 	}
 	switch(strtolower($item->title))
@@ -42,11 +48,11 @@ function filter_nav_menu_css_class($classes, $item)
 		{
 			if (strcasecmp(get_the_title(), 'blog') == 0)
 			{
-				$classes[] = 'active';
+				$classes[] = $active_class;
 			}
 			if (strcasecmp(get_post_type(), 'post') == 0)
 			{
-				$classes[] = 'active';
+				$classes[] = $active_class;
 			}
 			break;
 		}
@@ -54,7 +60,7 @@ function filter_nav_menu_css_class($classes, $item)
 		{
 			if (is_bbpress())
 			{
-				$classes[] = 'active';
+				$classes[] = $active_class;
 			}
 			break;
 		}

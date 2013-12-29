@@ -11,7 +11,7 @@
  * 3. /theme/assets/js/main.min.js (in footer)
  */
 function roots_scripts() {
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '38b8171e560264e99dc46fd22f860130');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '13ee262a2e0d62e99fd40c68e5f92dd6');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -27,10 +27,14 @@ function roots_scripts() {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', false, null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', false, 'be047fd05092555d7bd237da75e41c00', true);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', false, '1a5c1e7e1d0cd7c17355707efe22bd07', true);
   wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
   wp_enqueue_script('roots_scripts');
+
+  // Refined additions
+  wp_register_script('jquery.lavalamp', get_template_directory_uri() . '/assets/js/plugins/lavalamp/jquery.lavalamp.min.js', false, null, false);
+  wp_enqueue_script('jquery.lavalamp');
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 

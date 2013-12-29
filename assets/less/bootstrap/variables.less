@@ -275,10 +275,13 @@
 @navbar-default-link-color:                #777;
 @navbar-default-link-hover-color:          #333;
 @navbar-default-link-hover-bg:             transparent;
-@navbar-default-link-active-color:         #555;
-@navbar-default-link-active-bg:            darken(@navbar-default-bg, 6.5%);
+@navbar-default-link-active-color:         @navbar-default-link-color;
+@navbar-default-link-active-bg:            transparent;
 @navbar-default-link-disabled-color:       #ccc;
 @navbar-default-link-disabled-bg:          transparent;
+
+@default-navbar-default-link-active-color: #555;
+@default-navbar-default-link-active-bg:    darken(@navbar-default-bg, 6.5%);
 
 // Navbar brand label
 @navbar-default-brand-color:               @navbar-default-link-color;
