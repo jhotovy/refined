@@ -294,6 +294,10 @@ p.quote
    {
       .form-control;
    }
+   input[type="text"]
+   {
+      .form-control;
+   }
    input[type="submit"]
    {
       .btn;
@@ -345,9 +349,14 @@ p.quote
          }
       }
    }
+   /* Profile */
+   #profile-edit-form .button-nav
+   {
+      display: none;
+   }
 
-   /* Selects */
-   #activity-filter-by
+   /* Fix Inline Selects */
+   #activity-filter-by, #members-friends
    {
       display: inline-block !important;
       width: auto !important;

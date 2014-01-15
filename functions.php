@@ -24,11 +24,19 @@ require_once locate_template('/lib/custom.php');          // Custom functions
 add_image_size('front-page', 500, 330, true);
 
 /**
- * Filters
+ * Refined Filters
  */
 add_filter('nav_menu_css_class', 'filter_nav_menu_css_class', 10, 2);
 add_filter('excerpt_length', 'filter_excerpt_length', 10, 1);
 
+/**
+ * BuddyPress Filters
+ */
+remove_filter('bp_get_the_profile_field_value', 'xprofile_filter_link_profile_data', 9, 2);
+
+/**
+ * Refined Filter Implementation
+ */
 function filter_nav_menu_css_class($classes, $item)
 {
 	$active_class = 'active';
