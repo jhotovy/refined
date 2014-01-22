@@ -24,6 +24,11 @@ require_once locate_template('/lib/custom.php');          // Custom functions
 add_image_size('front-page', 500, 330, true);
 
 /**
+ * Refined Actions
+ */
+add_action('init', 'create_post_types');
+
+/**
  * Refined Filters
  */
 add_filter('nav_menu_css_class', 'filter_nav_menu_css_class', 10, 2);
@@ -33,6 +38,33 @@ add_filter('excerpt_length', 'filter_excerpt_length', 10, 1);
  * BuddyPress Filters
  */
 remove_filter('bp_get_the_profile_field_value', 'xprofile_filter_link_profile_data', 9, 2);
+
+/**
+ * Refined Action Implementation
+ */
+function create_post_types()
+{
+	register_post_type('refined-image', array
+	(
+		'labels' => array
+		(
+			'name' => 'Images',
+			'singular_name' => 'Image'
+		),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array
+		(
+			'slug' => 'images',
+			'with_front' => false
+		),
+		'supports' => array
+		(
+			'title', 'editor', 'author', 'thumbnail', 'comments', 'trackbacks'
+		),
+		'has-archive' => true
+	));
+}
 
 /**
  * Refined Filter Implementation
