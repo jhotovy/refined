@@ -92,6 +92,11 @@ input[type="submit"]
 .wp-menu-item
 {
    text-transform: uppercase;
+
+   .dropdown-menu > li
+   {
+      text-transform: none;
+   }
 }
 
 .lavalamp-object
@@ -249,6 +254,21 @@ p.quote
    background-image: url('../img/semi_transparent_black_75.png');
    color: white;
    font-weight: bold;
+}
+
+/* ==========================================================================
+   Gravity Forms
+   ========================================================================== */
+.gform_body
+{
+   input[type="text"]
+   {
+      .form-control;
+   }
+   select
+   {
+      .form-control;
+   }
 }
 
 /* ==========================================================================
