@@ -166,3 +166,13 @@ function refined_featured_image_path($size)
 		}
 	}
 }
+
+function refined_uploaded_image_path()
+{
+	return wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];
+}
+
+function refined_is_masonry_page()
+{
+	return (get_post_type() == 'refined-image');
+}
