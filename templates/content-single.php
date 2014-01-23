@@ -5,7 +5,11 @@
       <?php get_template_part('templates/entry-meta'); ?>
     </header>
     <div class="entry-content">
-      <?php the_content(); ?>
+      <?php if (get_post_type() == 'refined-image') : ?>
+        <?php get_template_part('templates/single', 'refined-image'); ?>
+      <?php else: ?>
+        <?php the_content(); ?>
+      <?php endif; ?>
     </div>
     <footer>
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
