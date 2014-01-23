@@ -44,25 +44,31 @@ remove_filter('bp_get_the_profile_field_value', 'xprofile_filter_link_profile_da
  */
 function create_post_types()
 {
-	register_post_type('refined-image', array
+	refined_create_post_type('refined-image', 'Image', 'Images', 'images');
+	refined_create_post_type('refined-video', 'Video', 'Videos', 'videos');
+	refined_create_post_type('refined-quote', 'Quote', 'Quotes', 'quotes');
+}
+
+function refined_create_post_type($post_type, $singular_name, $plural_name, $slug)
+{
+	register_post_type($post_type, array
 	(
 		'labels' => array
 		(
-			'name' => 'Images',
-			'singular_name' => 'Image'
+			'name' => $plural_name,
+			'singular_name' => $singular_name
 		),
 		'public' => true,
 		'has_archive' => true,
 		'rewrite' => array
 		(
-			'slug' => 'images',
+			'slug' => $slug,
 			'with_front' => false
 		),
 		'supports' => array
 		(
 			'title', 'editor', 'author', 'thumbnail', 'comments', 'trackbacks'
 		),
-		'has-archive' => true
 	));
 }
 
@@ -174,7 +180,7 @@ function refined_uploaded_image_path()
 
 function refined_is_user_content_post()
 {
-	return (get_post_type() == 'refined-image');
+	return (get_post_type() == 'refined-image' or get_post_type() == 'refined-video' or get_post_type() == 'refined-quote');
 }
 
 function refined_is_masonry_page()
