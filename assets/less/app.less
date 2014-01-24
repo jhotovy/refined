@@ -226,10 +226,20 @@ blockquote
    }
 }
 
-p.quote
+.refined-blog-quote
 {
    font-size: @font-size-large;
    padding: 0 @line-height-computed;
+}
+
+p.quote
+{
+   .refined-blog-quote;
+}
+
+div.quote
+{
+   .refined-blog-quote;
 }
 
 /* ==========================================================================
@@ -253,6 +263,22 @@ p.quote
    .refined-image-title
    {
       font-weight: normal;
+   }
+}
+
+/* ==========================================================================
+   User Generated Quotes
+   ========================================================================== */
+.refined-user-quote
+{
+   .quote
+   {
+      margin-bottom: @line-height-computed;
+   }
+
+   #author
+   {
+      margin-left: 50px;
    }
 }
 
@@ -308,6 +334,10 @@ p.quote
       .form-control;
    }
    select
+   {
+      .form-control;
+   }
+   textarea
    {
       .form-control;
    }

@@ -187,3 +187,8 @@ function refined_is_masonry_page()
 {
 	return (get_post_type() == 'refined-image');
 }
+
+function refined_should_display_title_and_meta()
+{
+	return (!(get_post_type() == 'refined-quote'));
+}
