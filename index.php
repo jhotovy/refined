@@ -8,8 +8,7 @@
 <?php endif; ?>
 
 <?php if (refined_is_masonry_page()) : ?>
-  <!-- Masonry gutter width should match @grid-gutter-width in variables.less -->
-  <div id='container' class='js-masonry' data-masonry-options='{"itemSelector":".masonry-item","gutter":15}'>
+  <div id='container' class='js-masonry' data-masonry-options='{"itemSelector":".masonry-item","gutter":<?php echo refined_masonry_gutter_width(); ?>}'>
 <?php endif; ?>
 
 <?php while (have_posts()) : the_post(); ?>

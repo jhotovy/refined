@@ -17,10 +17,9 @@
     <?php endwhile; ?>
   <?php if ($counter > 0) : echo '</div>'; endif; ?>
 </div>
+<div class="vertical-gutter"></div>
 
 <?php wp_reset_query(); ?>
-
-<div class="vertical-gutter"></div>
 
 <div class="row">
   <div class="col-sm-6">
@@ -36,9 +35,16 @@
     </div>
   </div>
 </div>
-
 <div class="vertical-gutter"></div>
 
-<div class="card padding-top">
+<?php wp_reset_query(); ?>
+<?php query_posts(array('posts_per_page' => 20, 'post_type' => 'refined-image')); ?>
+
+<div class="card padding-top" id="front-page-images">
   <h3 class="page-header">Images</h3>
+  <div id='container' class='js-masonry' data-masonry-options='{"itemSelector":".masonry-item","gutter":<?php echo refined_masonry_gutter_width(); ?>}'>
+    <?php while (have_posts()) : the_post(); ?>
+      <?php get_template_part('templates/content', 'refined-image'); ?>
+    <?php endwhile; ?>
+  </div>
 </div>
