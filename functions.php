@@ -185,7 +185,7 @@ function refined_is_user_content_post()
 
 function refined_is_masonry_page()
 {
-	return (get_post_type() == 'refined-image');
+	return (get_post_type() == 'refined-image' or get_post_type() == 'refined-quote');
 }
 
 function refined_should_display_title_and_meta()

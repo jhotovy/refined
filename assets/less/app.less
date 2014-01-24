@@ -243,11 +243,10 @@ div.quote
 }
 
 /* ==========================================================================
-   User Generated Images
+   Masonry
    ========================================================================== */
 .masonry-item
 {
-   width: 30%;
    margin-bottom: @grid-gutter-width;
 }
 
@@ -256,6 +255,18 @@ div.quote
    width: 100%;
 }
 
+.masonry-item.refined-user-image
+{
+   width: 30%;
+}
+.masonry-item.refined-user-quote
+{
+   width: 45%;
+}
+
+/* ==========================================================================
+   User Generated Images
+   ========================================================================== */
 .refined-user-image
 {
    .refined-image-container;
@@ -279,6 +290,7 @@ div.quote
    #author
    {
       margin-left: 50px;
+      color: @gray-light;
    }
 }
 
