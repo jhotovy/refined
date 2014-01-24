@@ -21,7 +21,24 @@
 <?php wp_reset_query(); ?>
 
 <div class="vertical-gutter"></div>
-<div class="card padding-top" id="bbpress-front-page">
-  <h3 class="page-header">Discussions</h3>
-  <?php echo do_shortcode('[bbp-topic-index]'); ?>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card padding-top" id="front-page-videos">
+      <h3 class="page-header">Videos</h3>
+      <p>Coming soon...</p>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card padding-top" id="bbpress-front-page">
+      <h3 class="page-header">Discussions</h3>
+      <?php echo do_shortcode('[bbp-topic-index]'); ?>
+    </div>
+  </div>
+</div>
+
+<div class="vertical-gutter"></div>
+
+<div class="card padding-top">
+  <h3 class="page-header">Images</h3>
 </div>

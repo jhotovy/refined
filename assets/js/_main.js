@@ -16,4 +16,8 @@ $(document).ready(function() {
     {
 		$('.card-sidebar').height(sidebarHeight);
     }
+
+    var middleCardHeight = Math.max($('#front-page-videos').height(), $('#bbpress-front-page').height());
+    $('#front-page-videos').height(middleCardHeight);
+    $('#bbpress-front-page').height(middleCardHeight);
 });
