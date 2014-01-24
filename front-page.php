@@ -1,4 +1,4 @@
-<?php query_posts(array('posts_per_page' => 4)); ?>
+<?php query_posts(array('posts_per_page' => 6)); ?>
 
 <div class="card padding-top">
   <?php if (!have_posts()) : ?>
@@ -10,10 +10,10 @@
   <?php $counter = 0; ?>
   <?php if (have_posts()) : echo '<div class="row">'; endif; ?>
     <?php while (have_posts()) : the_post(); $counter++; ?>
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <?php get_template_part('templates/content', 'front-post'); ?>
       </div>
-      <?php if ($counter % 2 == 0) : echo '</div><div class="vertical-gutter"></div><div class="row">'; endif; ?>
+      <?php if ($counter % 3 == 0) : echo '</div><div class="vertical-gutter"></div><div class="row">'; endif; ?>
     <?php endwhile; ?>
   <?php if ($counter > 0) : echo '</div>'; endif; ?>
 </div>
