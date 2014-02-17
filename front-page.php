@@ -48,3 +48,16 @@
     <?php endwhile; ?>
   </div>
 </div>
+<div class="vertical-gutter"></div>
+
+<?php wp_reset_query(); ?>
+<?php query_posts(array('posts_per_page' => 10, 'post_type' => 'refined-quote')); ?>
+
+<div class="card padding-top" id="front-page-quotes">
+  <h3 class="page-header">Quotes</h3>
+  <div id='container' class='js-masonry' data-masonry-options='{"itemSelector":".masonry-item","gutter":<?php echo refined_masonry_gutter_width(); ?>}'>
+    <?php while (have_posts()) : the_post(); ?>
+      <?php get_template_part('templates/content', 'refined-quote'); ?>
+    <?php endwhile; ?>
+  </div>
+</div>
