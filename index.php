@@ -8,7 +8,7 @@
 <?php endif; ?>
 
 <?php if (refined_is_masonry_page()) : ?>
-  <div id='container' class='js-masonry' data-masonry-options='{"itemSelector":".masonry-item","gutter":<?php echo refined_masonry_gutter_width(); ?>}'>
+  <div id='container' class='masonry-container'>
 <?php endif; ?>
 
 <?php while (have_posts()) : the_post(); ?>

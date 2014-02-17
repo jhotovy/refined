@@ -183,12 +183,6 @@ function refined_is_user_content_post()
 	return (get_post_type() == 'refined-image' or get_post_type() == 'refined-video' or get_post_type() == 'refined-quote');
 }
 
-function refined_masonry_gutter_width()
-{
-	# masonry gutter width should match @grid-gutter-width in variables.less
-	return 15;
-}
-
 function refined_is_masonry_page()
 {
 	return (get_post_type() == 'refined-image' or get_post_type() == 'refined-quote');

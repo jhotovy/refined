@@ -11,6 +11,16 @@ $(document).ready(function() {
 
     $('#mce-EMAIL').attr('placeholder', $('#mce-EMAIL').attr('value')).removeAttr('value');
 
+    $('.masonry-container').each(function() {
+        var container = $(this);
+        container.imagesLoaded(function() {
+            container.masonry({
+                itemSelector: '.masonry-item',
+                gutter: 15
+            });
+        });
+    });
+
     var sidebarHeight = Math.max($('.card-sidebar').height(), $('.card-main').height());
     if (sidebarHeight > $('.card-sidebar').height())
     {

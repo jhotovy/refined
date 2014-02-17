@@ -42,7 +42,7 @@
 
 <div class="card padding-top" id="front-page-images">
   <h3 class="page-header">Images</h3>
-  <div id='container' class='js-masonry' data-masonry-options='{"itemSelector":".masonry-item","gutter":<?php echo refined_masonry_gutter_width(); ?>}'>
+  <div id='container' class='masonry-container'>
     <?php while (have_posts()) : the_post(); ?>
       <?php get_template_part('templates/content', 'refined-image'); ?>
     <?php endwhile; ?>
@@ -55,7 +55,7 @@
 
 <div class="card padding-top" id="front-page-quotes">
   <h3 class="page-header">Quotes</h3>
-  <div id='container' class='js-masonry' data-masonry-options='{"itemSelector":".masonry-item","gutter":<?php echo refined_masonry_gutter_width(); ?>}'>
+  <div id='container' class='masonry-container'>
     <?php while (have_posts()) : the_post(); ?>
       <?php get_template_part('templates/content', 'refined-quote'); ?>
     <?php endwhile; ?>

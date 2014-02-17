@@ -27,15 +27,17 @@ function roots_scripts() {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '178fc59bd922b8b76e3069f603b08ed6', true);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '6c5256550022d3ac6439d0e69bd84821', true);
   wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
   wp_enqueue_script('roots_scripts');
 
   // Refined additions
+  wp_register_script('jquery.imagesloaded', get_template_directory_uri() . '/assets/js/plugins/imagesloaded/imagesloaded.pkgd.min.js', false, null, false);
   wp_register_script('jquery.lavalamp', get_template_directory_uri() . '/assets/js/plugins/lavalamp/jquery.lavalamp.min.js', false, null, false);
   wp_register_script('masonry', get_template_directory_uri() . '/assets/js/plugins/masonry/masonry.pkgd.min.js', false, null, false);
 
+  wp_enqueue_script('jquery.imagesloaded');
   wp_enqueue_script('jquery.lavalamp');
   wp_enqueue_script('masonry');
 }
