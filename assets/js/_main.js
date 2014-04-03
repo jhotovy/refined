@@ -2,6 +2,18 @@ $(document).ready(function() {
     $('.wp-menu').lavalamp({
         setOnClick: true,
     });
+    $('.navbar-nav .dropdown').find('.dropdown-toggle')
+        .removeClass('.dropdown-toggle')
+        .removeAttr('data-toggle')
+        .removeAttr('data-target');
+    $('.navbar-nav .dropdown').hover(function() {
+        $(this).find('.dropdown-menu').show();
+    }, function() {
+        $(this).find('.dropdown-menu').hide();
+    });
+    $('.navbar-nav .dropdown').click(function() {
+        $(this).find('.dropdown-menu').hide();
+    });
 
     $(".refined-image-overlay").hover(function() {
         $(this).fadeTo(300, 0.33);
