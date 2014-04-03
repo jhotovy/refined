@@ -11,7 +11,7 @@ $(document).ready(function() {
     }, function() {
         $(this).find('.dropdown-menu').hide();
     });
-    $('.navbar-nav .dropdown').click(function() {
+    $('.navbar-nav .dropdown :not(#menu-about)').click(function() {
         $(this).find('.dropdown-menu').hide();
     });
 

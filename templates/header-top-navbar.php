@@ -34,6 +34,16 @@
           <li><a href="<?php echo wp_login_url(get_permalink()); ?>">Login</a></li>
           <li><a href="<?php echo get_home_url(); ?>/register">Join</a></li>
         <?php endif; ?>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span id="menu-about" class="glyphicon glyphicon-question-sign"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo get_home_url(); ?>/about-2">About</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/updates">Updates</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/connect">Connect</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </div>
