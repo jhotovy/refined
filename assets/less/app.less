@@ -137,7 +137,14 @@ input[type="submit"]
    Sidebar
    ========================================================================== */
 
-.sidebar { }
+.sidebar
+{
+   h1, h2, h3
+   {
+      margin-top: @line-height-sidebar-computed;
+      margin-bottom: @line-height-sidebar-computed / 2;
+   }
+}
 
 #mc-embedded-subscribe-form
 {
