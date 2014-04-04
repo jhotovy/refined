@@ -27,6 +27,7 @@ add_image_size('front-page', 500, 330, true);
  * Refined Actions
  */
 add_action('init', 'create_post_types');
+add_action('bp_setup_nav', 'refined_bp_setup_nav');
 
 /**
  * Refined Filters
@@ -70,6 +71,12 @@ function refined_create_post_type($post_type, $singular_name, $plural_name, $slu
 			'title', 'editor', 'author', 'thumbnail', 'comments', 'trackbacks'
 		),
 	));
+}
+
+function refined_bp_setup_nav()
+{
+	global $bp;
+	$bp->bp_nav['discussions']['name'] = 'Discussions';
 }
 
 /**
