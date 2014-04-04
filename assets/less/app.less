@@ -99,9 +99,13 @@ input[type="submit"]
    }
 }
 
-.lavalamp-object
+.wp-menu .lavalamp-object
 {
    background-color: @default-navbar-inverse-link-active-bg;
+}
+#buddypress .lavalamp-object
+{
+   background-color: @default-navbar-default-link-active-bg;
 }
 
 #menu-about
@@ -442,10 +446,9 @@ div.quote
    /* Nav / Tabs */
    #object-nav
    {
-      color: @navbar-inverse-color;
-      background-color: @navbar-inverse-bg;
-      border-radius: @border-radius-base;
-      padding: 2px;
+      color: @navbar-default-color;
+      background-color: @navbar-default-bg;
+      border-color: @navbar-default-border;
       font-family: @font-family-sans-serif;
 
       > ul
@@ -456,18 +459,19 @@ div.quote
 
          li > a
          {
-            color: @navbar-inverse-link-color;
+            background-color: transparent;
+            color: @navbar-default-link-color;
             padding-top: 6px;
             padding-bottom: 6px;
          }
          li > a:hover
          {
-            background-color: lighten(@navbar-inverse-bg, 10%);
+            background-color: transparent;
          }
          li.selected > a
          {
-            color: @default-navbar-inverse-link-active-color;
-            background-color: @default-navbar-inverse-link-active-bg;
+            color: @default-navbar-default-link-active-color;
+            background-color: transparent;
          }
          li > a > span
          {

@@ -2,6 +2,10 @@ $(document).ready(function() {
     $('.wp-menu').lavalamp({
         setOnClick: true,
     });
+    $('#buddypress #item-nav ul').first().lavalamp({
+        setOnClick: true,
+        activeObj: '.selected',
+    });
     $('.navbar-nav .dropdown').find('.dropdown-toggle')
         .removeClass('.dropdown-toggle')
         .removeAttr('data-toggle')
