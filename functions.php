@@ -37,6 +37,7 @@ add_filter('nav_menu_css_class', 'filter_nav_menu_css_class', 10, 2);
 add_filter('excerpt_length', 'filter_excerpt_length', 10, 1);
 add_filter('login_headerurl', 'refined_login_logo_url');
 add_filter('login_headertitle', 'refined_login_logo_title');
+add_filter('gform_validation', 'refined_gform_validation');
 
 /**
  * BuddyPress Filters
@@ -150,6 +151,30 @@ function refined_login_logo_url()
 function refined_login_logo_title()
 {
 	return get_bloginfo('name');
+}
+
+function refined_gform_validation($validation_result)
+{
+	$form = $validation_result['form'];
+	foreach ($form['fields'] as &$field)
+	{
+		if (strpos($field['cssClass'], 'refined-video-url-input') === false)
+		{
+			continue;
+		}
+		// ensure wp_oembed_get will not fail for video url's
+		$field_id = $field['id'];
+		$url = rgpost('input_' . $field_id);
+		if (!wp_oembed_get($url))
+		{
+			$field['failed_validation'] = true;
+			$field['validation_message'] = 'This is not a link to a video.';
+			$validation_result['is_valid'] = false;
+		}
+	}
+	$validation_result['form'] = $form;
+	return $validation_result;
+	return false;
 }
 
 /**
