@@ -38,8 +38,5 @@ function roots_title() {
   if ($retval == 'Forums') {
     return 'Discussions';
   }
-  if ($retval == '') {
-    return wp_title('');
-  }
   return $retval;
 }

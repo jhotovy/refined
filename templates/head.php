@@ -3,7 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo roots_title() ?> | <?php echo get_bloginfo('name'); ?></title>
+  <title>
+    <?php if (roots_title()) : ?>
+      <?php echo roots_title() ?> | <?php echo get_bloginfo('name'); ?>
+    <?php else : ?>
+      <?php echo wp_title(''); ?>
+    <?php endif; ?>
+  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <?php wp_head(); ?>
