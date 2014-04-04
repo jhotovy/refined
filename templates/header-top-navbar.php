@@ -31,11 +31,11 @@
               <li><a href="<?php echo bp_core_get_user_domain(bp_loggedin_user_id()); ?>/profile/change-avatar">Change Picture</a></li>
               <li><a href="<?php echo bp_core_get_user_domain(bp_loggedin_user_id()); ?>/messages">Messages</a></li>
               <li><a href="<?php echo bp_core_get_user_domain(bp_loggedin_user_id()); ?>/settings">Settings</a></li>
-              <li><a href="<?php echo wp_logout_url(get_permalink()); ?>">Logout</a></li>
+              <li><a href="<?php echo wp_logout_url(refined_current_page_link()); ?>">Logout</a></li>
             </ul>
           </li>
         <?php else : ?>
-          <li><a href="<?php echo wp_login_url(get_permalink()); ?>">Login</a></li>
+          <li><a href="<?php echo wp_login_url(refined_current_page_link()); ?>">Login</a></li>
           <li><a href="<?php echo get_home_url(); ?>/register">Join</a></li>
         <?php endif; ?>
           <li class="dropdown">
