@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo roots_title() ?> | Refine The Mind</title>
+  <title><?php echo roots_title() ?> | <?php echo get_bloginfo('name'); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <?php wp_head(); ?>
