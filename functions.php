@@ -104,7 +104,11 @@ function filter_nav_menu_css_class($classes, $item)
 		}
 		case 'discussions':
 		{
-			if (is_bbpress())
+			if (is_bbpress)
+			{
+				$classes[] = $active_class;
+			}
+			if (strcasecmp(get_the_title(), 'discussion-categories') == 0)
 			{
 				$classes[] = $active_class;
 			}
