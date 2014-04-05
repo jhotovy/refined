@@ -31,7 +31,7 @@
       <?php if (have_posts()) : echo '<div class="row">'; endif; ?>
         <?php while (have_posts()) : the_post(); $counter++; ?>
           <div class="col-sm-6">
-            <?php get_template_part('templates/content', 'refined-video'); ?>
+            <?php get_template_part('templates/content', 'front-video'); ?>
           </div>
           <?php if ($counter % 2 == 0) : echo '</div><div class="vertical-gutter"></div><div class="row">'; endif; ?>
         <?php endwhile; ?>
