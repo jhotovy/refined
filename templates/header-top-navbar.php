@@ -23,7 +23,7 @@
         <?php if (is_user_logged_in()) : ?>
           <li class="dropdown">
             <a href="<?php echo bp_core_get_user_domain(bp_loggedin_user_id()); ?>" class="dropdown-toggle" data-toggle="dropdown">
-              <b class="caret"></b>&nbsp&nbsp<?php echo wp_get_current_user()->display_name; ?>
+              <b class="caret"></b>&nbsp&nbsp<?php echo refined_bp_displayname_or_uname(); ?>
               <?php echo get_avatar(get_current_user_id(), 18); ?>
             </a>
             <ul class="dropdown-menu">

@@ -255,3 +255,13 @@ function refined_current_page_link()
 {
 	return "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 }
+
+function refined_bp_displayname_or_uname()
+{
+	$user = wp_get_current_user();
+	if ($user->display_name)
+	{
+		return $user->display_name;
+	}
+	return $user->user_login;
+}
