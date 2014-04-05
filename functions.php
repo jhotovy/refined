@@ -28,12 +28,16 @@ add_image_size('front-page', 500, 330, true);
  */
 add_action('init', 'create_post_types');
 add_action('bp_setup_nav', 'refined_bp_setup_nav');
+add_action('login_enqueue_scripts', 'refined_enqueue_login_stylesheet');
 
 /**
  * Refined Filters
  */
 add_filter('nav_menu_css_class', 'filter_nav_menu_css_class', 10, 2);
 add_filter('excerpt_length', 'filter_excerpt_length', 10, 1);
+add_filter('login_headerurl', 'refined_login_logo_url');
+add_filter('login_headertitle', 'refined_login_logo_title');
+add_filter('gform_validation', 'refined_gform_validation');
 
 /**
  * BuddyPress Filters
@@ -77,6 +81,15 @@ function refined_bp_setup_nav()
 {
 	global $bp;
 	$bp->bp_nav['discussions']['name'] = 'Discussions';
+}
+
+function refined_enqueue_login_stylesheet()
+{
+	?>
+		<link rel="stylesheet" id="refined_login_css"
+			href="<?php echo get_bloginfo('stylesheet_directory'); ?>/assets/css/login.css" 
+			type="text/css" media="all" />
+	<?php
 }
 
 /**
@@ -128,6 +141,40 @@ function filter_nav_menu_css_class($classes, $item)
 function filter_excerpt_length($length)
 {
 	return 75;
+}
+
+function refined_login_logo_url()
+{
+	return get_bloginfo('url');
+}
+
+function refined_login_logo_title()
+{
+	return get_bloginfo('name');
+}
+
+function refined_gform_validation($validation_result)
+{
+	$form = $validation_result['form'];
+	foreach ($form['fields'] as &$field)
+	{
+		if (strpos($field['cssClass'], 'refined-video-url-input') === false)
+		{
+			continue;
+		}
+		// ensure wp_oembed_get will not fail for video url's
+		$field_id = $field['id'];
+		$url = rgpost('input_' . $field_id);
+		if (!wp_oembed_get($url))
+		{
+			$field['failed_validation'] = true;
+			$field['validation_message'] = 'This is not a link to a video.';
+			$validation_result['is_valid'] = false;
+		}
+	}
+	$validation_result['form'] = $form;
+	return $validation_result;
+	return false;
 }
 
 /**
@@ -202,4 +249,19 @@ function refined_is_masonry_page()
 function refined_should_display_title_and_meta()
 {
 	return (!(get_post_type() == 'refined-quote'));
+}
+
+function refined_current_page_link()
+{
+	return "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+}
+
+function refined_bp_displayname_or_uname()
+{
+	$user = wp_get_current_user();
+	if ($user->display_name)
+	{
+		return $user->display_name;
+	}
+	return $user->user_login;
 }
