@@ -25,7 +25,9 @@ $(document).ready(function() {
         $(this).fadeTo(300, 0.0);
     });
 
-    $('#mce-EMAIL').attr('placeholder', $('#mce-EMAIL').attr('value')).removeAttr('value');
+    $('input[id=mce-EMAIL]').each(function() {
+        $(this).attr('placeholder', $(this).attr('value')).removeAttr('value');
+    });
 
     $('.masonry-container').each(function() {
         var container = $(this);

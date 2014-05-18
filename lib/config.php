@@ -57,7 +57,8 @@ function roots_display_sidebar() {
       'is_404',
       'is_front_page',
       'bp_is_members_component',
-      'bp_is_user'
+      'bp_is_user',
+      array('is_page', array('about', 'about-2', 'connect', 'updates')),
     ),
     /**
      * Page template checks (via is_page_template())
