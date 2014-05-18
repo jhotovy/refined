@@ -74,6 +74,7 @@ function refined_create_post_type($post_type, $singular_name, $plural_name, $slu
 		(
 			'title', 'editor', 'author', 'thumbnail', 'comments', 'trackbacks'
 		),
+		'yarpp_support' => true,
 	));
 }
 
@@ -264,4 +265,16 @@ function refined_bp_displayname_or_uname()
 		return $user->display_name;
 	}
 	return $user->user_login;
+}
+
+function refined_the_related()
+{
+	return the_related(get_the_ID(), array(
+		'usept' => array
+		(
+			get_post_type() => true
+		),
+		'storage_id' => 'better-related-' . get_post_type(),
+		'minscore' => 0,
+	));
 }

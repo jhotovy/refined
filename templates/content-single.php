@@ -1,4 +1,4 @@
-<?php while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
     <?php if (refined_should_display_title_and_meta()) : ?>
       <header>
@@ -28,4 +28,4 @@
     <br/>
     <?php comments_template('/templates/comments.php'); ?>
   </article>
-<?php endwhile; ?>
+<?php endif; ?>
