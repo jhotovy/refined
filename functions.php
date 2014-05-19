@@ -37,6 +37,7 @@ add_filter('excerpt_length', 'filter_excerpt_length', 10, 1);
 add_filter('login_headerurl', 'refined_login_logo_url');
 add_filter('login_headertitle', 'refined_login_logo_title');
 add_filter('gform_validation', 'refined_gform_validation');
+add_filter('gform_post_data', 'refined_gform_post_data', 10, 3);
 add_filter('show_admin_bar', 'refined_show_admin_bar');
 
 /**
@@ -114,6 +115,8 @@ function refined_login_logo_title()
 
 function refined_gform_validation($validation_result)
 {
+	global $refined_noembed_video_data;
+
 	$form = $validation_result['form'];
 	foreach ($form['fields'] as &$field)
 	{
@@ -129,11 +132,34 @@ function refined_gform_validation($validation_result)
 			$field['failed_validation'] = true;
 			$field['validation_message'] = 'This is not a link to a video.';
 			$validation_result['is_valid'] = false;
+			break;
+		}
+		$refined_noembed_video_data = refined_noembed_get_video_data($url);
+		if (!$refined_noembed_video_data)
+		{
+			$field['failed_validation'] = true;
+			$field['validation message'] = 'Submission failed. Please try again later or let us know if the issue persists.';
+			$validation_result['is_valid'] = false;
 		}
 	}
 	$validation_result['form'] = $form;
 	return $validation_result;
 	return false;
+}
+
+function refined_gform_post_data($post_data, $form, $entry)
+{
+	global $refined_noembed_video_data;
+
+	if (strcasecmp('submit video', $form['title']) == 0)
+	{
+		// post_title originally stores video URL. move it to content,
+		// and grab the actual title from noembed
+		$url = $post_data['post_title'];
+		$post_data['post_title'] = $refined_noembed_video_data['title'];
+		$post_data['post_content'] = $url;
+	}
+	return $post_data;
 }
 
 function refined_show_admin_bar()
@@ -198,6 +224,31 @@ function refined_featured_image_path($size)
 function refined_uploaded_image_path()
 {
 	return wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];
+}
+
+// available data fields: width, author_name, author_url, version, provider_url,
+// thumbnail_width, provider_name, thumbnail_url, height, thumbnail_height, url,
+// title, type, html
+function refined_noembed_get_video_data($url)
+{
+	$noembed_url = 'http://noembed.com/embed?url=' . urlencode($url);
+	$response = file_get_contents($noembed_url);
+	if ($response === FALSE)
+	{
+		return NULL;
+	}
+	$data = json_decode($response, true);
+	if (!$data)
+	{
+		return NULL;
+	}
+	// these fields are required; return NULL if they are not available to
+	// indicate an error with noembed
+	if (!($data['title'] && $data['thumbnail_url']))
+	{
+		return NULL;
+	}
+	return $data;
 }
 
 function refined_is_user_content_post()

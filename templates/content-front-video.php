@@ -1,1 +1,1 @@
-<?php echo wp_oembed_get(get_the_title(), array('width' => 250)); ?>
+<?php echo wp_oembed_get(get_the_content(), array('width' => 250)); ?>
