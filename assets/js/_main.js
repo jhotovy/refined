@@ -41,11 +41,15 @@ $(document).ready(function() {
 
     $('.refined-video-container').fitVids();
 
-    var sidebarHeight = Math.max($('.card-sidebar').height(), $('.card-main').height());
-    if (sidebarHeight > $('.card-sidebar').height())
-    {
-		$('.card-sidebar').height(sidebarHeight);
-    }
+    $('.card-sidebar').imagesLoaded(function() {
+        $('.card-sidebar, .card-main').each(function() {
+            var sidebarHeight = Math.max($('.card-sidebar').height(), $('.card-main').height());
+            if (sidebarHeight > $(this).height())
+            {
+                $(this).height(sidebarHeight);
+            }
+        });
+    });
 
     var middleCardHeight = Math.max($('#front-page-videos').height(), $('#bbpress-front-page').height());
     $('#front-page-videos').height(middleCardHeight);
