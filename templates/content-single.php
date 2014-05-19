@@ -13,6 +13,8 @@
         <?php get_template_part('templates/single', 'refined-image'); ?>
       <?php elseif (get_post_type() == 'refined-quote') : ?>
         <?php get_template_part('templates/single', 'refined-quote'); ?>
+      <?php elseif (get_post_type() == 'refined-video') : ?>
+        <?php get_template_part('templates/single', 'refined-video'); ?>
       <?php else : ?>
         <?php the_content(); ?>
       <?php endif; ?>

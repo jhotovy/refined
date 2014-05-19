@@ -39,6 +39,8 @@ $(document).ready(function() {
         });
     });
 
+    $('.refined-video-container').fitVids();
+
     var sidebarHeight = Math.max($('.card-sidebar').height(), $('.card-main').height());
     if (sidebarHeight > $('.card-sidebar').height())
     {

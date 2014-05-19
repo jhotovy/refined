@@ -27,7 +27,7 @@ function roots_scripts() {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'ce9cdf74df969081a1b33862b8f3cb2a', true);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'dbfff02dee920fb0c1619134c7b805e2', true);
   wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
   wp_enqueue_script('roots_scripts');
@@ -35,10 +35,12 @@ function roots_scripts() {
   // Refined additions
   wp_register_script('jquery.imagesloaded', get_template_directory_uri() . '/assets/js/plugins/imagesloaded/imagesloaded.pkgd.min.js', false, null, false);
   wp_register_script('jquery.lavalamp', get_template_directory_uri() . '/assets/js/plugins/lavalamp/jquery.lavalamp.min.js', false, null, false);
+  wp_register_script('jquery.fitvids', get_template_directory_uri() . '/assets/js/plugins/fitvids/jquery.fitvids.js', false, null, false);
   wp_register_script('masonry', get_template_directory_uri() . '/assets/js/plugins/masonry/masonry.pkgd.min.js', false, null, false);
 
   wp_enqueue_script('jquery.imagesloaded');
   wp_enqueue_script('jquery.lavalamp');
+  wp_enqueue_script('jquery.fitvids');
   wp_enqueue_script('masonry');
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
