@@ -332,6 +332,14 @@ function refined_menu_class($title)
 		}
 		return implode(' ', $classes);
 	}
+	else if (bp_is_user())
+	{
+		if (strcasecmp($title, 'username') == 0)
+		{
+			$classes[] = $active_class;
+		}
+		return implode(' ', $classes);
+	}
 	switch(strtolower($title))
 	{
 		case 'blog':
