@@ -37,6 +37,7 @@ add_filter('excerpt_length', 'filter_excerpt_length', 10, 1);
 add_filter('login_headerurl', 'refined_login_logo_url');
 add_filter('login_headertitle', 'refined_login_logo_title');
 add_filter('gform_validation', 'refined_gform_validation');
+add_filter('show_admin_bar', 'refined_show_admin_bar');
 
 /**
  * BuddyPress Filters
@@ -133,6 +134,11 @@ function refined_gform_validation($validation_result)
 	$validation_result['form'] = $form;
 	return $validation_result;
 	return false;
+}
+
+function refined_show_admin_bar()
+{
+	return current_user_can('edit_posts');
 }
 
 /**
