@@ -29,6 +29,7 @@ add_image_size('front-page', 500, 330, true);
 add_action('init', 'create_post_types');
 add_action('bp_setup_nav', 'refined_bp_setup_nav');
 add_action('login_enqueue_scripts', 'refined_enqueue_login_stylesheet');
+add_action('gform_after_submission', "refined_gform_after_submission", 10, 2);
 
 /**
  * Refined Filters
@@ -162,6 +163,16 @@ function refined_gform_post_data($post_data, $form, $entry)
 	return $post_data;
 }
 
+function refined_gform_after_submission($entry, $form)
+{
+	global $refined_noembed_video_data;
+
+	if (strcasecmp('submit video', $form['title']) == 0)
+	{
+		add_post_meta($entry['post_id'], 'refined-video-thumbnail-url', $refined_noembed_video_data['thumbnail_url']);
+	}
+}
+
 function refined_show_admin_bar()
 {
 	return current_user_can('edit_posts');
@@ -249,6 +260,16 @@ function refined_noembed_get_video_data($url)
 		return NULL;
 	}
 	return $data;
+}
+
+function refined_video_url()
+{
+	return get_the_content();
+}
+
+function refined_video_thumbnail_url()
+{
+	return get_post_meta(get_the_id(), 'refined-video-thumbnail-url', true);
 }
 
 function refined_is_user_content_post()
