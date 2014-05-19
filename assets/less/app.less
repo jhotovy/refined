@@ -220,6 +220,27 @@ input[type="submit"]
 .refined-image-container
 {
    border: 1px solid @gray-lighter;
+
+   &.resizable
+   {
+      display: block;
+      position: relative;
+
+      #wrapper
+      {
+         position: relative;
+         width: 100%;
+         padding-bottom: 66%;
+      }
+      #thumbnail
+      {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+      }
+   }
 }
 
 .refined-image-overlay
@@ -384,42 +405,6 @@ div.quote
       text-align: center;
       font-size: @font-size-small;
    }
-}
-
-/* ==========================================================================
-   Front Page
-   ========================================================================== */
-.front-post
-{
-   .refined-image-container;
-   display: block;
-   position: relative;
-}
-
-.front-post #overlay
-{
-   .refined-image-overlay
-}
-
-.front-post #wrapper
-{
-   position: relative;
-   width: 100%;
-   padding-bottom: 66%;
-}
-
-.front-post #thumbnail
-{
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-}
-
-.front-post #title
-{
-   .refined-image-title;
 }
 
 /* ==========================================================================
