@@ -14,12 +14,17 @@
       </button>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
-      <?php
-        if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav wp-menu'));
-        endif;
-      ?>
-      <ul class="nav navbar-nav navbar-right">
+      <ul id="menu-refined" class="nav navbar-nav wp-menu">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span id="menu-about" class="glyphicon glyphicon-question-sign"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo get_home_url(); ?>/about-2">About</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/updates">Updates</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/connect">Connect</a></li>
+          </ul>
+        </li>
         <?php if (is_user_logged_in()) : ?>
           <li class="dropdown">
             <a href="<?php echo bp_core_get_user_domain(bp_loggedin_user_id()); ?>" class="dropdown-toggle" data-toggle="dropdown">
@@ -35,19 +40,31 @@
             </ul>
           </li>
         <?php else : ?>
-          <li><a href="<?php echo wp_login_url(refined_current_page_link()); ?>">Login</a></li>
-          <li><a href="<?php echo get_home_url(); ?>/register">Join</a></li>
+          <li class="wp-menu-item"><a href="<?php echo get_home_url(); ?>/register">Join</a></li>
+          <li class="wp-menu-item"><a href="<?php echo wp_login_url(refined_current_page_link()); ?>">Sign In</a></li>
         <?php endif; ?>
-          <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <span id="menu-about" class="glyphicon glyphicon-question-sign"></span>
-          </a>
+        <li class="wp-menu-item"><a href="<?php echo get_home_url(); ?>/">Home</a></li>
+        <li class="wp-menu-item"><a href="<?php echo get_home_url(); ?>/blog">Blog</a></li>
+        <li class="wp-menu-item"><a href="<?php echo get_home_url(); ?>/discussions">Discussions</a></li>
+        <li class="dropdown wp-menu-item">
+          <a href="<?php echo get_home_url(); ?>/videos" class="dropdown-toggle" data-toggle="dropdown">Videos&nbsp<b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="<?php echo get_home_url(); ?>/about-2">About</a></li>
-            <li><a href="<?php echo get_home_url(); ?>/updates">Updates</a></li>
-            <li><a href="<?php echo get_home_url(); ?>/connect">Connect</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/submit-video">Submit Video</a></li>
           </ul>
         </li>
+        <li class="dropdown wp-menu-item">
+          <a href="<?php echo get_home_url(); ?>/images" class="dropdown-toggle" data-toggle="dropdown">Images&nbsp<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo get_home_url(); ?>/submit-image">Submit Image</a></li>
+          </ul>
+        </li>
+        <li class="dropdown wp-menu-item">
+          <a href="<?php echo get_home_url(); ?>/quotes" class="dropdown-toggle" data-toggle="dropdown">Quotes&nbsp<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo get_home_url(); ?>/submit-quote">Submit Quote</a></li>
+          </ul>
+        </li>
+        <li class="wp-menu-item"><a href="http://refinethemind.tumblr.com/">Library</a></li>
       </ul>
     </nav>
   </div>
