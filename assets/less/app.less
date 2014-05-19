@@ -18,6 +18,16 @@ a:hover
    text-decoration: none;
 }
 
+.link-inverse
+{
+   color: @text-color;
+   &:hover
+   {
+      color: @link-color;
+   }
+}
+
+
 @card-padding: 15px;
 
 .card
@@ -461,6 +471,11 @@ div.quote
    .avatar
    {
       margin-bottom: 0 !important;
+   }
+   /* Inverse Links */
+   .bbp-topic-permalink
+   {
+      .link-inverse;
    }
 }
 
