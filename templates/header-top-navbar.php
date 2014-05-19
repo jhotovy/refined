@@ -26,10 +26,10 @@
           </ul>
         </li>
         <?php if (is_user_logged_in()) : ?>
-          <li class="dropdown">
+          <li class="dropdown <?php echo refined_menu_class('Username'); ?>">
             <a href="<?php echo bp_core_get_user_domain(bp_loggedin_user_id()); ?>" class="dropdown-toggle" data-toggle="dropdown">
-              <b class="caret"></b>&nbsp&nbsp<?php echo refined_bp_displayname_or_uname(); ?>
-              <?php echo get_avatar(get_current_user_id(), 18); ?>
+              <?php echo get_avatar(get_current_user_id(), 18); ?>&nbsp&nbsp<?php echo refined_bp_displayname_or_uname(); ?>&nbsp
+              <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li><a href="<?php echo bp_core_get_user_domain(bp_loggedin_user_id()); ?>/profile">Profile</a></li>
@@ -40,31 +40,31 @@
             </ul>
           </li>
         <?php else : ?>
-          <li class="wp-menu-item"><a href="<?php echo get_home_url(); ?>/register">Join</a></li>
-          <li class="wp-menu-item"><a href="<?php echo wp_login_url(refined_current_page_link()); ?>">Sign In</a></li>
+          <li class="<?php echo refined_menu_class('Join'); ?>"><a href="<?php echo get_home_url(); ?>/register">Join</a></li>
+          <li class="<?php echo refined_menu_class('Sign In'); ?>"><a href="<?php echo wp_login_url(refined_current_page_link()); ?>">Sign In</a></li>
         <?php endif; ?>
-        <li class="wp-menu-item"><a href="<?php echo get_home_url(); ?>/">Home</a></li>
-        <li class="wp-menu-item"><a href="<?php echo get_home_url(); ?>/blog">Blog</a></li>
-        <li class="wp-menu-item"><a href="<?php echo get_home_url(); ?>/discussions">Discussions</a></li>
-        <li class="dropdown wp-menu-item">
+        <li class="<?php echo refined_menu_class('Home'); ?>"><a href="<?php echo get_home_url(); ?>/">Home</a></li>
+        <li class="<?php echo refined_menu_class('Blog'); ?>"><a href="<?php echo get_home_url(); ?>/blog">Blog</a></li>
+        <li class="<?php echo refined_menu_class('Discussions'); ?>"><a href="<?php echo get_home_url(); ?>/discussions">Discussions</a></li>
+        <li class="dropdown <?php echo refined_menu_class('Videos'); ?>">
           <a href="<?php echo get_home_url(); ?>/videos" class="dropdown-toggle" data-toggle="dropdown">Videos&nbsp<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo get_home_url(); ?>/submit-video">Submit Video</a></li>
           </ul>
         </li>
-        <li class="dropdown wp-menu-item">
+        <li class="dropdown <?php echo refined_menu_class('Images'); ?>">
           <a href="<?php echo get_home_url(); ?>/images" class="dropdown-toggle" data-toggle="dropdown">Images&nbsp<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo get_home_url(); ?>/submit-image">Submit Image</a></li>
           </ul>
         </li>
-        <li class="dropdown wp-menu-item">
+        <li class="dropdown <?php echo refined_menu_class('Quotes'); ?>">
           <a href="<?php echo get_home_url(); ?>/quotes" class="dropdown-toggle" data-toggle="dropdown">Quotes&nbsp<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo get_home_url(); ?>/submit-quote">Submit Quote</a></li>
           </ul>
         </li>
-        <li class="wp-menu-item"><a href="http://refinethemind.tumblr.com/">Library</a></li>
+        <li class="<?php echo refined_menu_class('Library'); ?>"><a href="http://refinethemind.tumblr.com/">Library</a></li>
       </ul>
     </nav>
   </div>

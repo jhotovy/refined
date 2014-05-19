@@ -33,7 +33,6 @@ add_action('login_enqueue_scripts', 'refined_enqueue_login_stylesheet');
 /**
  * Refined Filters
  */
-add_filter('nav_menu_css_class', 'filter_nav_menu_css_class', 10, 2);
 add_filter('excerpt_length', 'filter_excerpt_length', 10, 1);
 add_filter('login_headerurl', 'refined_login_logo_url');
 add_filter('login_headertitle', 'refined_login_logo_title');
@@ -96,49 +95,6 @@ function refined_enqueue_login_stylesheet()
 /**
  * Refined Filter Implementation
  */
-function filter_nav_menu_css_class($classes, $item)
-{
-	$active_class = 'active';
-	$classes[] = 'wp-menu-item';
-
-	if (is_front_page())
-	{
-		if (strcasecmp($item->title, 'home') == 0)
-		{
-			$classes[] = $active_class;
-		}
-		return $classes;
-	}
-	switch(strtolower($item->title))
-	{
-		case 'blog':
-		{
-			if (strcasecmp(get_the_title(), 'blog') == 0)
-			{
-				$classes[] = $active_class;
-			}
-			if (strcasecmp(get_post_type(), 'post') == 0)
-			{
-				$classes[] = $active_class;
-			}
-			break;
-		}
-		case 'discussions':
-		{
-			if (is_bbpress)
-			{
-				$classes[] = $active_class;
-			}
-			if (strcasecmp(get_the_title(), 'discussion-categories') == 0)
-			{
-				$classes[] = $active_class;
-			}
-			break;
-		}
-	}
-	return $classes;
-}
-
 function filter_excerpt_length($length)
 {
 	return 75;
@@ -277,4 +233,83 @@ function refined_the_related()
 		'storage_id' => 'better-related-' . get_post_type(),
 		'minscore' => 0,
 	));
+}
+
+function refined_menu_class($title)
+{
+	$active_class = 'active';
+	$classes[] = 'wp-menu-item';
+
+	if (is_front_page())
+	{
+		if (strcasecmp($title, 'home') == 0)
+		{
+			$classes[] = $active_class;
+		}
+		return $classes;
+	}
+	switch(strtolower($title))
+	{
+		case 'blog':
+		{
+			if (strcasecmp(get_the_title(), 'blog') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			if (strcasecmp(get_post_type(), 'post') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			break;
+		}
+		case 'discussions':
+		{
+			if (is_bbpress())
+			{
+				$classes[] = $active_class;
+			}
+			if (strcasecmp(get_the_title(), 'discussion-categories') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			break;
+		}
+		case 'videos':
+		{
+			if (strcasecmp(get_post_type(), 'refined-video') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			if (strcasecmp(get_the_title(), 'submit video') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			break;
+		}
+		case 'images':
+		{
+			if (strcasecmp(get_post_type(), 'refined-image') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			if (strcasecmp(get_the_title(), 'submit image') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			break;
+		}
+		case 'quotes':
+		{
+			if (strcasecmp(get_post_type(), 'refined-quote') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			if (strcasecmp(get_the_title(), 'submit quote') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			break;
+		}
+	}
+	return implode(' ', $classes);
 }
