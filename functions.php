@@ -81,6 +81,7 @@ function refined_bp_setup_nav()
 {
 	global $bp;
 	$bp->bp_nav['discussions']['name'] = 'Discussions';
+	$bp->bp_options_nav['discussions']['replies']['name'] = 'Comments';
 }
 
 function refined_enqueue_login_stylesheet()
