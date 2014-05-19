@@ -1,9 +1,7 @@
-<?php the_title(); ?>
-<?php echo wp_oembed_get(refined_video_url(), array('width' => 600)); ?>
-<p id="meta">
-  submitted by
-  <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn">
-    <?php echo get_the_author(); ?>
-  </a>
-</p>
-<hr/>
+<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="front-post">
+  <div id="wrapper">
+    <img id="thumbnail" src="<?php echo refined_video_thumbnail_url(); ?>" />
+  </div>
+  <div class="refined-image-overlay"></div>
+  <h5 id="title"><?php the_title(); ?></h5>
+</a>
