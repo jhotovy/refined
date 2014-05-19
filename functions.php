@@ -253,7 +253,7 @@ function refined_menu_class($title)
 		{
 			$classes[] = $active_class;
 		}
-		return $classes;
+		return implode(' ', $classes);
 	}
 	switch(strtolower($title))
 	{
@@ -275,7 +275,7 @@ function refined_menu_class($title)
 			{
 				$classes[] = $active_class;
 			}
-			if (strcasecmp(get_the_title(), 'discussion-categories') == 0)
+			if (strcasecmp(get_the_title(), 'categories') == 0)
 			{
 				$classes[] = $active_class;
 			}
@@ -312,6 +312,25 @@ function refined_menu_class($title)
 				$classes[] = $active_class;
 			}
 			if (strcasecmp(get_the_title(), 'submit quote') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			break;
+		}
+		case 'join':
+		{
+			global $post;
+			if (strcasecmp($post->post_name, 'register') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			break;
+		}
+		case 'about':
+		{
+			if (strcasecmp(get_the_title(), 'about') == 0 ||
+				strcasecmp(get_the_title(), 'connect') == 0 ||
+				strcasecmp(get_the_title(), 'updates') == 0) 
 			{
 				$classes[] = $active_class;
 			}

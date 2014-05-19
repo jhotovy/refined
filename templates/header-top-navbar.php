@@ -15,7 +15,7 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul id="menu-refined" class="nav navbar-nav wp-menu">
-        <li class="dropdown">
+        <li class="dropdown <?php echo refined_menu_class('About'); ?>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <span id="menu-about" class="glyphicon glyphicon-question-sign"></span>
           </a>
