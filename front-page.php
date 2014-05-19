@@ -36,6 +36,7 @@
           <?php if ($counter % 2 == 0) : echo '</div><div class="vertical-gutter"></div><div class="row">'; endif; ?>
         <?php endwhile; ?>
       <?php if ($counter > 0) : echo '</div>'; endif; ?>
+      <p><a href="<?php echo get_home_url(); ?>/videos">See All Videos</a></p>
     </div>
   </div>
 
@@ -45,6 +46,7 @@
     <div class="card padding-top" id="bbpress-front-page">
       <h3 class="page-header">Discussions</h3>
       <?php echo do_shortcode('[bbp-topic-index]'); ?>
+      <p><a href="<?php echo get_home_url(); ?>/discussions">See All Discussions</a></p>
     </div>
   </div>
 </div>
@@ -60,6 +62,7 @@
       <?php get_template_part('templates/content', 'refined-image'); ?>
     <?php endwhile; ?>
   </div>
+  <p><a href="<?php echo get_home_url(); ?>/images">See All Images</a></p>
 </div>
 <div class="vertical-gutter"></div>
 
@@ -73,4 +76,5 @@
       <?php get_template_part('templates/content', 'refined-quote'); ?>
     <?php endwhile; ?>
   </div>
+  <p><a href="<?php echo get_home_url(); ?>/quotes">See All Quotes</a></p>
 </div>

@@ -33,7 +33,9 @@
 
 	<?php endif; ?>
 
-	<button type="button" class="btn btn-default"><a href="<?php echo get_home_url(); ?>/discussion-categories">View By Category</a></button>
+	<?php if (!is_front_page()) : ?>
+		<button type="button" class="btn btn-default"><a href="<?php echo get_home_url(); ?>/discussion-categories">View By Category</a></button>
+	<?php endif; ?>
 
 	<?php do_action( 'bbp_template_after_topics_index' ); ?>
 
