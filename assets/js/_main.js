@@ -1,3 +1,23 @@
+var setupForNonMobileView = function() {
+    $('.card-sidebar').imagesLoaded(function() {
+        $('.card-sidebar, .card-main').each(function() {
+            var sidebarHeight = Math.max($('.card-sidebar').height(), $('.card-main').height());
+            if (sidebarHeight > $(this).height())
+            {
+                $(this).height(sidebarHeight);
+            }
+        });
+    });
+
+    var middleCardHeight = Math.max($('#front-page-videos').height(), $('#bbpress-front-page').height());
+    $('#front-page-videos').height(middleCardHeight);
+    $('#bbpress-front-page').height(middleCardHeight);
+};
+
+var setupForMobileView = function() {
+
+};
+
 $(document).ready(function() {
     $('.wp-menu').lavalamp({
         setOnClick: true,
@@ -40,18 +60,11 @@ $(document).ready(function() {
     });
 
     $('.refined-video-container').fitVids();
-
-    $('.card-sidebar').imagesLoaded(function() {
-        $('.card-sidebar, .card-main').each(function() {
-            var sidebarHeight = Math.max($('.card-sidebar').height(), $('.card-main').height());
-            if (sidebarHeight > $(this).height())
-            {
-                $(this).height(sidebarHeight);
-            }
-        });
-    });
-
-    var middleCardHeight = Math.max($('#front-page-videos').height(), $('#bbpress-front-page').height());
-    $('#front-page-videos').height(middleCardHeight);
-    $('#bbpress-front-page').height(middleCardHeight);
+    
+    // 768 = @screen-sm-mid
+    if ($(window).width() < 768) {
+        setupForMobileView();
+    } else {
+        setupForNonMobileView();
+    }
 });
