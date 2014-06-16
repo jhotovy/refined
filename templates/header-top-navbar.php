@@ -45,7 +45,13 @@
         <?php endif; ?>
         <li class="<?php echo refined_menu_class('Home'); ?>"><a href="<?php echo get_home_url(); ?>/">Home</a></li>
         <li class="<?php echo refined_menu_class('Blog'); ?>"><a href="<?php echo get_home_url(); ?>/blog">Blog</a></li>
-        <li class="<?php echo refined_menu_class('Discussions'); ?>"><a href="<?php echo get_home_url(); ?>/discussions">Discussions</a></li>
+        <li class="dropdown <?php echo refined_menu_class('Discussions'); ?>">
+          <a href="<?php echo get_home_url(); ?>/discussions" class="dropdown-toggle" data-toggle="dropdown">Discussions&nbsp<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo get_home_url(); ?>/new-discussion">New Discussion</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/discussion-categories">View By Category</a></li>
+          </ul>
+        </li>
         <li class="dropdown <?php echo refined_menu_class('Videos'); ?>">
           <a href="<?php echo get_home_url(); ?>/videos" class="dropdown-toggle" data-toggle="dropdown">Videos&nbsp<b class="caret"></b></a>
           <ul class="dropdown-menu">
