@@ -1,11 +1,14 @@
 body.login
 {
-	background-image: url('../img/login-background.jpg');
+	background-color: black;
 }
 
 body.login #login h1 a
 {
    background-image: url('../img/logo-no-text.png');
+   background-size: 160px 190px;
+   width: 160px;
+   height: 190px;
 }
 
 #loginform
