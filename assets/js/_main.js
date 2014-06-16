@@ -15,7 +15,8 @@ var setupForNonMobileView = function() {
 };
 
 var setupForMobileView = function() {
-
+    // move sidebar to right side (after main content in DOM)
+    $('.main').after($('.sidebar').remove());
 };
 
 $(document).ready(function() {
