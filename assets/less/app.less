@@ -85,7 +85,12 @@ input[type="submit"]
    margin-top: 15px;
    margin-bottom: 15px;
    margin-left: 10px;
-   height: 100px;
+   @media (max-width: @screen-sm-min) {
+      width: 95%;
+   }
+   @media (min-width: @screen-sm-min) {
+      height: 100px;
+   }
 }
 
 .page-header
