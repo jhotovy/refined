@@ -30,6 +30,7 @@ add_action('init', 'create_post_types');
 add_action('bp_setup_nav', 'refined_bp_setup_nav');
 add_action('login_enqueue_scripts', 'refined_enqueue_login_stylesheet');
 add_action('gform_after_submission', "refined_gform_after_submission", 10, 2);
+add_action('add_attachment', 'refined_add_attachment', 10, 1);
 
 /**
  * Refined Filters
@@ -171,6 +172,16 @@ function refined_gform_after_submission($entry, $form)
 	{
 		add_post_meta($entry['post_id'], 'refined-video-thumbnail-url', $refined_noembed_video_data['thumbnail_url']);
 	}
+}
+
+function refined_add_attachment($attachment_id)
+{
+	$params = array();
+	$params['file'] = get_attached_file($attachment_id);
+	$params['url'] = wp_get_attachment_url($attachment_id);
+	$params['type'] = wp_check_filetype($params['file'])['type'];
+
+	imsanity_handle_upload($params);
 }
 
 function refined_show_admin_bar()
