@@ -360,7 +360,15 @@ function refined_menu_class($title)
 			{
 				$classes[] = $active_class;
 			}
-			if (strcasecmp(get_the_title(), 'categories') == 0)
+			if (strcasecmp(get_the_title(), 'discussion categories') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			if (strcasecmp(get_the_title(), 'discussions') == 0)
+			{
+				$classes[] = $active_class;
+			}
+			if (strcasecmp(get_the_title(), 'new discussion') == 0)
 			{
 				$classes[] = $active_class;
 			}
