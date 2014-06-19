@@ -288,6 +288,21 @@ function refined_is_user_content_post()
 	return (get_post_type() == 'refined-image' or get_post_type() == 'refined-video' or get_post_type() == 'refined-quote');
 }
 
+function refined_is_images_page()
+{
+	return (strcasecmp(roots_title(), 'images') == 0);
+}
+
+function refined_is_videos_page()
+{
+	return (strcasecmp(roots_title(), 'videos') == 0);
+}
+
+function refined_is_quotes_page()
+{
+	return (strcasecmp(roots_title(), 'quotes') == 0);
+}
+
 function refined_is_masonry_page()
 {
 	return (get_post_type() == 'refined-image');
