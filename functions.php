@@ -41,6 +41,7 @@ add_filter('login_headertitle', 'refined_login_logo_title');
 add_filter('gform_validation', 'refined_gform_validation');
 add_filter('gform_post_data', 'refined_gform_post_data', 10, 3);
 add_filter('show_admin_bar', 'refined_show_admin_bar');
+add_filter('the_title', 'refined_the_title');
 
 /**
  * BuddyPress Filters
@@ -187,6 +188,19 @@ function refined_add_attachment($attachment_id)
 function refined_show_admin_bar()
 {
 	return current_user_can('edit_posts');
+}
+
+function refined_the_title($title)
+{
+	// if title is wrapped in <a>, remove the link. BuddyPress does
+	// this sometimes
+	if (strpos($title, '<a href') == 0)
+	{
+		$title = preg_replace('#<a href[^>]*>#', '', $title);
+		$title = preg_replace('#</a>#', '', $title);
+		return $title;
+	}
+	return $title;
 }
 
 /**
