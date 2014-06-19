@@ -5,11 +5,7 @@
 function roots_title() {
   $retval = '';
   if (is_home()) {
-    if (get_option('page_for_posts', true)) {
-      $retval = get_the_title(get_option('page_for_posts', true));
-    } else {
-      $retval = __('Latest Posts', 'roots');
-    }
+    return 'Refine The Mind | Question all the things.';
   } elseif (is_archive()) {
     $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
     if ($term) {
