@@ -68,7 +68,18 @@ function roots_display_sidebar() {
       'template-custom.php'
     )
   );
-
+  if (refined_is_images_page())
+  {
+    return false;
+  }
+  if (refined_is_videos_page())
+  {
+    return false;
+  }
+  if (refined_is_quotes_page())
+  {
+    return false;
+  }
   return apply_filters('roots_display_sidebar', $sidebar_config->display);
 }
 
