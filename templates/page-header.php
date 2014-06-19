@@ -1,4 +1,4 @@
-<?php if (roots_title()) : ?>
+<?php if (refined_should_display_title()) : ?>
   <div class="page-header">
     <h2>
       <?php echo roots_title(); ?>

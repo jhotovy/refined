@@ -318,6 +318,23 @@ function refined_should_display_title_and_meta()
 	return (!(get_post_type() == 'refined-quote'));
 }
 
+function refined_should_display_title()
+{
+	if (strcasecmp(get_the_title(), 'about') == 0)
+	{
+		return false;
+	}
+	if (strcasecmp(get_the_title(), 'updates') == 0)
+	{
+		return false;
+	}
+	if (strcasecmp(get_the_title(), 'connect') == 0)
+	{
+		return false;
+	}
+	return roots_title();
+}
+
 function refined_current_page_link()
 {
 	return "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
