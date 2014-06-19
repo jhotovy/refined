@@ -25,8 +25,9 @@
 <div class="row">
   <div class="col-sm-6">
     <div class="card padding-top" id="front-page-videos">
-      <h3 class="page-header">Videos</h3>
-
+      <h3 class="page-header">
+        Videos<button class="btn btn-default pull-right"><a href="<?php echo get_home_url(); ?>/submit-video">Submit Video</a></button>
+      </h3>
       <?php $counter = 0; ?>
       <?php if (have_posts()) : echo '<div class="row">'; endif; ?>
         <?php while (have_posts()) : the_post(); $counter++; ?>
@@ -44,7 +45,9 @@
 
   <div class="col-sm-6">
     <div class="card padding-top" id="bbpress-front-page">
-      <h3 class="page-header">Discussions</h3>
+      <h3 class="page-header">
+        Discussions<button class="btn btn-default pull-right"><a href="<?php echo get_home_url(); ?>/new-discussion">Start Discussion</a></button>
+      </h3>
       <?php echo do_shortcode('[bbp-topic-index]'); ?>
       <p><a href="<?php echo get_home_url(); ?>/discussions">See All Discussions</a></p>
     </div>
@@ -56,7 +59,9 @@
 <?php query_posts(array('posts_per_page' => 20, 'post_type' => 'refined-image')); ?>
 
 <div class="card padding-top" id="front-page-images">
-  <h3 class="page-header">Images</h3>
+  <h3 class="page-header">
+    Images<button class="btn btn-default pull-right"><a href="<?php echo get_home_url(); ?>/submit-image">Submit Image</a></button>
+  </h3>
   <div id='container' class='masonry-container'>
     <?php while (have_posts()) : the_post(); ?>
       <?php get_template_part('templates/content', 'refined-image'); ?>
@@ -70,7 +75,9 @@
 <?php query_posts(array('posts_per_page' => 10, 'post_type' => 'refined-quote')); ?>
 
 <div class="card padding-top" id="front-page-quotes">
-  <h3 class="page-header">Quotes</h3>
+  <h3 class="page-header">
+    Quotes<button class="btn btn-default pull-right"><a href="<?php echo get_home_url(); ?>/submit-quote">Submit Quote</a></button>
+  </h3>
   <div id='container' class='masonry-container'>
     <?php while (have_posts()) : the_post(); ?>
       <?php get_template_part('templates/content', 'refined-quote'); ?>
