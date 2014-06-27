@@ -11,7 +11,7 @@
     <?php else : ?>
       <div class="vertical-gutter"></div>
     <?php endif; ?>
-    <div class="entry-content" <?php if (get_post_type() == 'post') echo 'data-sharebar-offset="75"'; ?>>
+    <div class="entry-content" <?php if (get_post_type() == 'post') echo 'data-sharebar-offset="30"'; ?>>
       <?php if (get_post_type() == 'refined-image') : ?>
         <?php get_template_part('templates/single', 'refined-image'); ?>
       <?php elseif (get_post_type() == 'refined-quote') : ?>
