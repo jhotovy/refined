@@ -21,8 +21,8 @@
     </div>
     <?php if (get_post_type() == 'post') : ?>
       <div class="signup-box">
-        <h3>Grab Free Weekly Updates</h3>
-        <p>You'll receive a new post in your inbox each time I publish (usually once per week). I strive to bring you useful food for thought every time. Simply type your email below:</p>
+        <h3>Free Email Updates</h3>
+        <p>Join 5,000 wonderful readers. Receive one thought-provoking parcel of goodness each week:</p>
         <!-- Begin MailChimp Signup Form -->
         <div id="mc_embed_signup" style="text-align: left;"><form id="mc-embedded-subscribe-form" class="validate" action="http://collegepartyblog.us2.list-manage.com/subscribe/post?u=229fad4d0dcc15b541174dae0&amp;id=24be761037" method="post" name="mc-embedded-subscribe-form" target="_blank"><label for="mce-EMAIL"></label>
         <input id="mce-EMAIL" class="email" type="text" name="EMAIL" value="your email address" /><input id="mc-embedded-subscribe" class="button" type="submit" name="subscribe" value="Join!" /></form></div>
