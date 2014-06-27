@@ -1,5 +1,8 @@
 <?php if (have_posts()) : the_post(); ?>
   <article <?php post_class(); ?>>
+
+    <?php if (get_post_type() == 'post') echo '<div class="narrow-page">'; ?>
+
     <?php if (refined_should_display_title_and_meta()) : ?>
       <header>
         <h2 class="entry-title"><?php the_title(); ?></h2>
@@ -8,7 +11,7 @@
     <?php else : ?>
       <div class="vertical-gutter"></div>
     <?php endif; ?>
-    <div class="entry-content">
+    <div class="entry-content" <?php if (get_post_type() == 'post') echo 'data-sharebar-offset="75"'; ?>>
       <?php if (get_post_type() == 'refined-image') : ?>
         <?php get_template_part('templates/single', 'refined-image'); ?>
       <?php elseif (get_post_type() == 'refined-quote') : ?>
@@ -31,5 +34,7 @@
       <br/>
     <?php endif; ?>
     <?php comments_template('/templates/comments.php'); ?>
+
+    <?php if (get_post_type() == 'post') echo '</div>'; ?>
   </article>
 <?php endif; ?>
