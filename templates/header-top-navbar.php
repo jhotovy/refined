@@ -17,7 +17,7 @@
       <ul id="menu-refined" class="nav navbar-nav wp-menu">
         <li class="<?php echo refined_menu_class('Home'); ?>"><a href="<?php echo get_home_url(); ?>/">Home</a></li>
         <li class="<?php echo refined_menu_class('Blog'); ?>"><a href="<?php echo get_home_url(); ?>/blog">Blog</a></li>
-        <li class="dropdown <?php echo refined_menu_class('Discussions'); ?>">
+        <li class="dropdown <?php echo refined_menu_class('Discuss'); ?>">
           <a href="<?php echo get_home_url(); ?>/discussions" class="dropdown-toggle" data-toggle="dropdown">Discussions&nbsp<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo get_home_url(); ?>/new-discussion">New Discussion</a></li>
@@ -43,6 +43,7 @@
           </ul>
         </li>
         <li class="<?php echo refined_menu_class('Library'); ?>"><a href="http://refinethemind.tumblr.com/">Library</a></li>
+	<li class="<?php echo refined_menu_class('Store'); ?>"><a href="http://refinethemind.bigcartel.com/">Store</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown <?php echo refined_menu_class('About'); ?>">
@@ -52,7 +53,7 @@
           <ul class="dropdown-menu">
             <li><a href="<?php echo get_home_url(); ?>/about-2">About</a></li>
             <li><a href="<?php echo get_home_url(); ?>/updates">Updates</a></li>
-            <li><a href="<?php echo get_home_url(); ?>/connect">Connect</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/contact">Contact</a></li>
           </ul>
         </li>
         <?php if (is_user_logged_in()) : ?>
