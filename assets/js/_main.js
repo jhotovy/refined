@@ -61,6 +61,7 @@ $(document).ready(function() {
     });
 
     $('.refined-video-container').fitVids();
+    $('#bbpress-front-page .bbp-body ul').slice(10).remove();
     
     // 768 = @screen-sm-mid
     if ($(window).width() < 768) {

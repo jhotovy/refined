@@ -37,7 +37,8 @@
           <?php if ($counter % 2 == 0) : echo '</div><div class="vertical-gutter"></div><div class="row">'; endif; ?>
         <?php endwhile; ?>
       <?php if ($counter > 0) : echo '</div>'; endif; ?>
-      <p><a href="<?php echo get_home_url(); ?>/videos">See All Videos</a></p>
+      <p class="bottom-aligned-text"><a href="<?php echo get_home_url(); ?>/videos">See All Videos</a></p>
+      <p class="foo">&nbsp</p>
     </div>
   </div>
 
@@ -49,7 +50,8 @@
         Discussions<button class="btn btn-default pull-right"><a href="<?php echo get_home_url(); ?>/new-discussion">Start Discussion</a></button>
       </h3>
       <?php echo do_shortcode('[bbp-topic-index]'); ?>
-      <p><a href="<?php echo get_home_url(); ?>/discussions">See All Discussions</a></p>
+      <p class="bottom-aligned-text"><a href="<?php echo get_home_url(); ?>/discussions">See All Discussions</a></p>
+      <p class="foo">&nbsp</p>
     </div>
   </div>
 </div>
