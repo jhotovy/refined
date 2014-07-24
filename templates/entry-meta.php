@@ -4,7 +4,7 @@
   <?php else : ?>
     <?php echo __('by', 'roots'); ?>
   <?php endif; ?>
-  <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?php echo get_the_author(); ?></a>
+  <a href="<?php echo bp_core_get_user_domain(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?php echo get_the_author(); ?></a>
   <?php echo __(' | ', 'roots'); ?>
-  <a href="#disqus_thread"><?php comments_number(); ?></a>
+  <a href="<?php echo get_permalink(); ?>#disqus_thread"><?php comments_number(); ?></a>
 </p>
