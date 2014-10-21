@@ -22,6 +22,9 @@ require_once locate_template('/lib/custom.php');          // Custom functions
  * Images
  */
 add_image_size('front-page', 500, 330, true);
+add_image_size('width_200px', 200, 0, false);
+add_image_size('width_350px', 350, 0, false);
+
 
 /**
  * Refined Actions
@@ -257,9 +260,9 @@ function refined_featured_image_path($size)
 	}
 }
 
-function refined_uploaded_image_path()
+function refined_uploaded_image_path($size = 'thumbnail')
 {
-	return wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0];
+	return wp_get_attachment_image_src(get_post_thumbnail_id(), $size)[0];
 }
 
 // available data fields: width, author_name, author_url, version, provider_url,

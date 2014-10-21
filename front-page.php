@@ -66,7 +66,7 @@
   </h3>
   <div id='container' class='masonry-container'>
     <?php while (have_posts()) : the_post(); ?>
-      <?php get_template_part('templates/content', 'refined-image'); ?>
+      <?php get_template_part('templates/content', 'front-image'); ?>
     <?php endwhile; ?>
   </div>
   <p><a href="<?php echo get_home_url(); ?>/images">See All Images</a></p>
