@@ -51,7 +51,7 @@
             <span id="menu-about" class="glyphicon glyphicon-question-sign"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="<?php echo get_home_url(); ?>/about-2">About</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/mission">Mission</a></li>
             <li><a href="<?php echo get_home_url(); ?>/updates">Updates</a></li>
             <li><a href="<?php echo get_home_url(); ?>/contact">Contact</a></li>
           </ul>
