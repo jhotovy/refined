@@ -56,7 +56,6 @@ remove_filter('bp_get_the_profile_field_value', 'xprofile_filter_link_profile_da
  */
 function create_post_types()
 {
-	refined_create_post_type('refined-image', 'Image', 'Images', 'images');
 	refined_create_post_type('refined-video', 'Video', 'Videos', 'videos');
 	refined_create_post_type('refined-quote', 'Quote', 'Quotes', 'quotes');
 }
@@ -302,12 +301,7 @@ function refined_video_thumbnail_url()
 
 function refined_is_user_content_post()
 {
-	return (get_post_type() == 'refined-image' or get_post_type() == 'refined-video' or get_post_type() == 'refined-quote');
-}
-
-function refined_is_images_page()
-{
-	return (strcasecmp(roots_title(), 'images') == 0);
+	return (get_post_type() == 'refined-video' or get_post_type() == 'refined-quote');
 }
 
 function refined_is_videos_page()
@@ -320,9 +314,10 @@ function refined_is_quotes_page()
 	return (strcasecmp(roots_title(), 'quotes') == 0);
 }
 
+// TODO: this can be removed
 function refined_is_masonry_page()
 {
-	return (get_post_type() == 'refined-image');
+	return false;
 }
 
 function refined_is_two_column_grid_page()
@@ -441,18 +436,6 @@ function refined_menu_class($title)
 				$classes[] = $active_class;
 			}
 			if (strcasecmp(get_the_title(), 'submit video') == 0)
-			{
-				$classes[] = $active_class;
-			}
-			break;
-		}
-		case 'images':
-		{
-			if (strcasecmp(get_post_type(), 'refined-image') == 0)
-			{
-				$classes[] = $active_class;
-			}
-			if (strcasecmp(get_the_title(), 'submit image') == 0)
 			{
 				$classes[] = $active_class;
 			}

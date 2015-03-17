@@ -58,22 +58,6 @@
 <div class="vertical-gutter"></div>
 
 <?php wp_reset_query(); ?>
-<?php query_posts(array('posts_per_page' => 20, 'post_type' => 'refined-image')); ?>
-
-<div class="card padding-top" id="front-page-images">
-  <h3 class="page-header">
-    Images<button class="btn btn-default pull-right"><a href="<?php echo get_home_url(); ?>/submit-image">Submit Image</a></button>
-  </h3>
-  <div id='container' class='masonry-container'>
-    <?php while (have_posts()) : the_post(); ?>
-      <?php get_template_part('templates/content', 'front-image'); ?>
-    <?php endwhile; ?>
-  </div>
-  <p><a href="<?php echo get_home_url(); ?>/images">See All Images</a></p>
-</div>
-<div class="vertical-gutter"></div>
-
-<?php wp_reset_query(); ?>
 <?php query_posts(array('posts_per_page' => 10, 'post_type' => 'refined-quote')); ?>
 
 <div class="card padding-top" id="front-page-quotes">
