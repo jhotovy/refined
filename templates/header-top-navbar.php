@@ -1,8 +1,9 @@
-<header class="logo-header">
+<header class="logo-header chris-test">
   <div class="container">
     <a><href="<?php echo get_home_url(); ?>"><img class="logo center-block" src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" /></a>
   </div>
 </header>
+<!-- chris johnson says hi -->
 <header class="banner navbar navbar-inverse navbar-static-top" role="banner">
   <div class="container">
     <div class="navbar-header">
@@ -17,23 +18,11 @@
       <ul id="menu-refined" class="nav navbar-nav wp-menu">
         <li class="<?php echo refined_menu_class('Home'); ?>"><a href="<?php echo get_home_url(); ?>/">Home</a></li>
         <li class="<?php echo refined_menu_class('Blog'); ?>"><a href="<?php echo get_home_url(); ?>/blog">Blog</a></li>
-        <li class="dropdown <?php echo refined_menu_class('Discuss'); ?>">
-          <a href="<?php echo get_home_url(); ?>/discussions" class="dropdown-toggle" data-toggle="dropdown">Discussions&nbsp<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="<?php echo get_home_url(); ?>/new-discussion">New Discussion</a></li>
-            <li><a href="<?php echo get_home_url(); ?>/discussion-categories">View By Category</a></li>
-          </ul>
         </li>
         <li class="dropdown <?php echo refined_menu_class('Videos'); ?>">
           <a href="<?php echo get_home_url(); ?>/videos" class="dropdown-toggle" data-toggle="dropdown">Videos&nbsp<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo get_home_url(); ?>/submit-video">Submit Video</a></li>
-          </ul>
-        </li>
-        <li class="dropdown <?php echo refined_menu_class('Images'); ?>">
-          <a href="<?php echo get_home_url(); ?>/images" class="dropdown-toggle" data-toggle="dropdown">Images&nbsp<b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="<?php echo get_home_url(); ?>/submit-image">Submit Image</a></li>
           </ul>
         </li>
         <li class="dropdown <?php echo refined_menu_class('Quotes'); ?>">
@@ -42,6 +31,12 @@
             <li><a href="<?php echo get_home_url(); ?>/submit-quote">Submit Quote</a></li>
           </ul>
         </li>
+        <li class="dropdown <?php echo refined_menu_class('Discuss'); ?>">
+          <a href="<?php echo get_home_url(); ?>/discussions" class="dropdown-toggle" data-toggle="dropdown">Discuss&nbsp<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo get_home_url(); ?>/new-discussion">New Discussion</a></li>
+            <li><a href="<?php echo get_home_url(); ?>/discussion-categories">View By Category</a></li>
+          </ul>
         <li class="<?php echo refined_menu_class('Library'); ?>"><a href="http://refinethemind.tumblr.com/">Library</a></li>
 	<li class="<?php echo refined_menu_class('Store'); ?>"><a href="http://refinethemind.bigcartel.com/">Store</a></li>
       </ul>

@@ -1,5 +1,6 @@
+<!-- testing server chris johnson -->
 <?php get_template_part('templates/page', 'header'); ?>
-
+<!-- testing server chris johnson -->
 <?php if (!have_posts()) : ?>
   <div class="alert alert-warning">
     <?php _e('Sorry, no results were found.', 'roots'); ?>
