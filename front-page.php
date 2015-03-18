@@ -37,6 +37,8 @@
       </div>
     <?php endwhile; ?>
   </div>
+  <br/>
+  <p><a href="<?php echo get_home_url(); ?>/blog">See All Blog Posts</a></p>
 </div>
 <div class="vertical-gutter"></div>
 
