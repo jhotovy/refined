@@ -3,9 +3,9 @@
     <h2>
       <?php echo roots_title(); ?>
       <?php if (refined_is_videos_page()): ?>
-        <button class="btn btn-default pull-right"><a href="<?php echo get_home_url(); ?>/submit-video">Submit Video</a></button>
+        <a href="<?php echo get_home_url(); ?>/submit-video"><button class="btn btn-default pull-right">Submit Video</button></a>
       <?php elseif (refined_is_quotes_page()): ?>
-        <button class="btn btn-default pull-right"><a href="<?php echo get_home_url(); ?>/submit-quote">Submit Quote</a></button>
+        <a href="<?php echo get_home_url(); ?>/submit-quote"><button class="btn btn-default pull-right">Submit Quote</button></a>
       <?php endif; ?>
     </h2>
   </div>

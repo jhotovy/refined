@@ -47,7 +47,7 @@
 
 <div class="card padding-top" id="front-page-videos">
   <h3 class="page-header">
-    Videos<button class="btn btn-default pull-right"><a href="<?php echo get_home_url(); ?>/submit-video">Submit Video</a></button>
+    Videos<a href="<?php echo get_home_url(); ?>/submit-video"><button class="btn btn-default pull-right">Submit Video</button></a>
   </h3>
   <?php $counter = 0; ?>
   <?php if (have_posts()) : echo '<div class="row">'; endif; ?>
@@ -68,7 +68,7 @@
 
 <div class="card padding-top" id="front-page-quotes">
   <h3 class="page-header">
-    Quotes<button class="btn btn-default pull-right"><a href="<?php echo get_home_url(); ?>/submit-quote">Submit Quote</a></button>
+    Quotes<a href="<?php echo get_home_url(); ?>/submit-quote"><button class="btn btn-default pull-right">Submit Quote</button></a>
   </h3>
   <div id='container' class='masonry-container'>
     <?php while (have_posts()) : the_post(); ?>
