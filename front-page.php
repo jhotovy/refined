@@ -30,14 +30,6 @@
   </div>
   <div class="vertical-gutter"></div>
   <?php $counter = 0; ?>
-  <div class="row">
-    <?php while ($counter < 4) : the_post(); $counter++; ?>
-      <div class="col-sm-3">
-        <?php get_template_part('templates/content', 'front-post'); ?>
-      </div>
-    <?php endwhile; ?>
-  </div>
-  <br/>
   <p><a href="<?php echo get_home_url(); ?>/blog">See All Blog Posts</a></p>
 </div>
 <div class="vertical-gutter"></div>
