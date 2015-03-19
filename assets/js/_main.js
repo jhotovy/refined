@@ -45,6 +45,13 @@ $(document).ready(function() {
     }, function() {
         $(this).fadeTo(300, 0.0);
     });
+    $('.refined-user-quote a').hover(function() {
+        $(this).addClass('hover');
+        $(this).find('.quote').addClass('hover');
+    }, function() {
+        $(this).removeClass('hover');
+        $(this).find('.quote').removeClass('hover');
+    });
 
     $('input[id=mce-EMAIL]').each(function() {
         $(this).attr('placeholder', $(this).attr('value')).removeAttr('value');
