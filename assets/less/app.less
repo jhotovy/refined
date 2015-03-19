@@ -349,9 +349,15 @@ input[type="submit"]
 blockquote
 {
    border: none;
-   padding-left: 74px;
    padding-top: 0;
-   background: url('../img/quotation_marks.png') no-repeat 0 6px;
+   @media (min-width: @screen-sm-min) {
+      background: url('../img/quotation_marks_64x50.png') no-repeat 0 6px;
+      padding-left: 74px;
+   }
+   @media (max-width: @screen-sm-min) {
+      background: url('../img/quotation_marks_32x25.png') no-repeat 0 6px;
+      padding-left: 40px;
+   }
    p
    {
       font-size: @font-size-medium-large;
@@ -442,6 +448,21 @@ div.quote
    {
       margin-left: 50px;
       color: @gray-light;
+   }
+}
+
+/* ==========================================================================
+   WP Biographia
+   ========================================================================== */
+@media (max-width: @screen-sm-min)
+{
+   .wp-biographia-pic
+   {
+      float: none;
+   }
+   .wp-biographia-text
+   {
+      margin-left: 0;
    }
 }
 
