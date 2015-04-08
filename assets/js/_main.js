@@ -22,14 +22,18 @@ var setupAds = function(isMobile) {
                 adWidth = 336;
                 adHeight = 280;
             }
+        } else if (type === 'sidebar') {
+            adClass = 'ad-sidebar';
+            adWidth = 300;
+            adHeight = 250;
         }
         // var adHtml = 'hello world: ' + adWidth + 'x' + adHeight;
-        var adHtml = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- RTM Responsive Ad --><ins class="adsbygoogle ' + adClass + '" style="display:inline-block; width: ' + adWidth + 'px; height: ' + adHeight + 'px;" data-ad-client="ca-pub-3142110604181885" data-ad-slot="5415447335" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+        var adHtml = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- RTM Responsive Ad --><ins class="adsbygoogle ' + adClass + '" style="display:inline-block; width: ' + adWidth + 'px; height: ' + adHeight + 'px;" data-ad-client="ca-pub-3142110604181885" data-ad-slot="5415447335" data-ad-format="auto"></ins><script type="text/javascript">(adsbygoogle = window.adsbygoogle || []).push({});</script>';
         
         $(this).width(adWidth);
         $(this).html(adHtml);
-        // adsbygoogle = window.adsbygoogle || []).push({});
     });
+    // (adsbygoogle = window.adsbygoogle || []).push({});
 };
 
 var setupForNonMobileView = function() {
