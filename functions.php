@@ -33,7 +33,7 @@ add_action('init', 'create_post_types');
 add_action('bp_setup_nav', 'refined_bp_setup_nav');
 add_action('login_enqueue_scripts', 'refined_enqueue_login_stylesheet');
 add_action('gform_after_submission', "refined_gform_after_submission", 10, 2);
-add_action('add_attachment', 'refined_add_attachment', 10, 1);
+// add_action('add_attachment', 'refined_add_attachment', 10, 1);
 
 /**
  * Refined Filters
