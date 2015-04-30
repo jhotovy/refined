@@ -2,34 +2,22 @@ var setupAds = function(isMobile) {
     $('.refined-ad').each(function() {
         var type = $(this).data('type');
         var adWidth = 320;
-        var adHeight = 100;
-        var adClass = '';
+        var adHtml = '';
         if (type === 'header') {
-            adClass = 'ad-header';
             if (isMobile) {
+                adHtml = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- RTM Mobile --><ins class="adsbygoogle" style="display:inline-block;width:320px;height:50px" data-ad-client="ca-pub-3142110604181885" data-ad-slot="8553396931"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
                 adWidth = 320;
-                adHeight = 100;
             } else {
+                adHtml = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- RTM BOTTOM 2 --><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-3142110604181885" data-ad-slot="2477804133"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
                 adWidth = 728;
-                adHeight = 90;
             }
         } else if (type === 'in-post') {
-            adClass = 'ad-in-post';
-            if (isMobile) {
-                adWidth = 300;
-                adHeight = 250;
-            } else {
-                adWidth = 336;
-                adHeight = 280;
-            }
-        } else if (type === 'sidebar') {
-            adClass = 'ad-sidebar';
+            adHtml = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- RTM Text Ads --><ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-3142110604181885" data-ad-slot="4997528132"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
             adWidth = 300;
-            adHeight = 250;
+        } else if (type === 'sidebar') {
+            adHtml = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- RTM Text Ads --><ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-3142110604181885" data-ad-slot="4997528132"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>';
+            adWidth = 300;
         }
-        // var adHtml = 'hello world: ' + adWidth + 'x' + adHeight;
-        var adHtml = '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- RTM Responsive Ad --><ins class="adsbygoogle ' + adClass + '" style="display:inline-block; width: ' + adWidth + 'px; height: ' + adHeight + 'px;" data-ad-client="ca-pub-3142110604181885" data-ad-slot="5415447335" data-ad-format="auto"></ins><script type="text/javascript">(adsbygoogle = window.adsbygoogle || []).push({});</script>';
-        
         $(this).width(adWidth);
         $(this).html(adHtml);
     });
