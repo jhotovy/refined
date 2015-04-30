@@ -353,7 +353,10 @@ input[type="submit"]
 
 .featured-post .refined-image-title
 {
-   font-size: @font-size-h3;
+   @media (min-width: @screen-sm-min)
+   {
+      font-size: @font-size-h3;
+   }
 }
 
 /* ==========================================================================
