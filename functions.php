@@ -21,7 +21,8 @@ require_once locate_template('/lib/custom.php');          // Custom functions
 /**
  * Images
  */
-add_image_size('front-page', 500, 330, true);
+add_image_size('front-page-large', 546, 361, true);
+add_image_size('front-page-small', 265, 175, true);
 add_image_size('width_200px', 200, 0, false);
 add_image_size('width_350px', 350, 0, false);
 
@@ -220,7 +221,8 @@ function refined_image_dimensions($size)
 		case "thumbnail": return array(150, 150);
 		case "medium": return array(300, 300);
 		case "large": return array(640, 640);
-		case "front-page": return array(500, 330);
+		case "front-page-large": return array(546, 361);
+		case "front-page-small": return array(265, 175);
 	}
 }
 
@@ -251,7 +253,8 @@ function refined_featured_image_path($size)
 			{
 				return refined_image_path("featured_image_default_thumbnail.png");
 			}
-			case "front-page":
+			case "front-page-large":
+			case "front-page-small":
 			{
 				return refined_image_path("featured_image_default_front_page.png");
 			}

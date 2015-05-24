@@ -12,7 +12,7 @@
     <div class="col-sm-6">
       <div class="featured-post">
         <?php the_post(); ?>
-        <?php get_template_part('templates/content', 'front-post'); ?>
+        <?php get_template_part('templates/content', 'front-post-featured'); ?>
       </div>
     </div>
     <div class="col-sm-6">
