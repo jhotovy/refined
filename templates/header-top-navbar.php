@@ -1,6 +1,6 @@
 <header class="logo-header chris-test">
   <div class="container">
-    <a><href="<?php echo get_home_url(); ?>"><img class="logo center-block" src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" /></a>
+    <a href="<?php echo get_home_url(); ?>"><img class="logo center-block" src="<?php bloginfo('template_directory'); ?>/assets/img/logo.png" /></a>
   </div>
 </header>
 <!-- chris johnson says hi -->
