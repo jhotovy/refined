@@ -66,7 +66,7 @@
             </ul>
           </li>
         <?php else : ?>
-          <li class="<?php echo refined_menu_class('Join'); ?>"><a href="<?php echo get_home_url(); ?>/register">Join</a></li>
+          <li class="<?php echo refined_menu_class('Join'); ?>"><a href="<?php echo get_home_url(); ?>/join">Join</a></li>
           <li class="<?php echo refined_menu_class('Sign In'); ?>"><a href="<?php echo wp_login_url(refined_current_page_link()); ?>">Sign In</a></li>
         <?php endif; ?>
       </ul>
