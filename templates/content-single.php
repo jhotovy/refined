@@ -1,5 +1,5 @@
 <?php if (have_posts()) : the_post(); ?>
-  <article <?php post_class(); ?>>
+  <article <?php if (get_post_type() == 'post') : post_class('refined-blog-post'); else : post_class(); endif; ?>>
 
     <?php if (get_post_type() == 'post') echo '<div class="narrow-page">'; ?>
 
