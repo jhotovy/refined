@@ -1,7 +1,7 @@
 <?php if (have_posts()) : the_post(); ?>
   <article <?php if (get_post_type() == 'post') : post_class('refined-blog-post'); else : post_class(); endif; ?>>
 
-    <?php if (get_post_type() == 'post') echo '<div class="narrow-page">'; ?>
+    <div class="narrow-page">
 
     <?php if (refined_should_display_title_and_meta()) : ?>
       <header>
@@ -33,6 +33,6 @@
     <?php endif; ?>
     <?php comments_template('/templates/comments.php'); ?>
 
-    <?php if (get_post_type() == 'post') echo '</div>'; ?>
+    </div><!-- narrow-page -->
   </article>
 <?php endif; ?>
