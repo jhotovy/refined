@@ -1,0 +1,14 @@
+-- Find and replace the following buddypress strings --
+
+{buddypress}/bp-members/bp-members-screen.php
+    * "Create an Account"
+    * "Welcome, Human"
+{buddypress}/bp-templates/bp-legacy/buddypress/members/register.php
+    * "Registering for this site is easy. Just fill in the fields below, and we\'ll get a new account set up for you in no time."
+    * "Pretty chill that you want to participate in this community. This is a safe space where we can feel free to express ourselves, engage in compassionate dialogue, and negotiate meaning and "truth" together. Just enter your details below."
+{buddypress}/bp-members/bp-members-screen.php
+    * "Check Your Email To Activate Your Account"
+    * "Splendid"
+{buddypress}/bp-templates/bp-legacy/buddypress/members/register.php
+    * "You have successfully created your account! To begin using this site you will need to activate your account via the email we have just sent to your address."
+    * "You\'ve done it! All you have to do now is go find the email I just sent you and confirm. Also, add "jordan.bates1991@gmail.com" to your address book if you want to get in touch with me for any reason."
