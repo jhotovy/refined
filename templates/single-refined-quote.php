@@ -1,4 +1,3 @@
-<?php sharebar(); ?>
 <hr/>
 <div class="refined-user-quote">
   <div class="quote"><i>&ldquo;<?php echo get_the_content(); ?>&rdquo;</i></div>
