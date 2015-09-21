@@ -26,6 +26,7 @@ function roots_scripts() {
     wp_enqueue_script('comment-reply');
   }
 
+  /*
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
   wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'cf3d1054986dabde0185c56272dcfbae', true);
   wp_enqueue_script('modernizr');
@@ -42,6 +43,7 @@ function roots_scripts() {
   wp_enqueue_script('jquery.lavalamp');
   wp_enqueue_script('jquery.fitvids');
   wp_enqueue_script('masonry');
+  */
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 
