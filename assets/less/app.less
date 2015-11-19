@@ -29,6 +29,7 @@ a:hover
 
 
 @card-padding: 15px;
+@card-padding-mobile: 8px;
 
 .card
 {
@@ -37,6 +38,12 @@ a:hover
    padding-bottom: @card-padding;
    padding-left: @card-padding;
    padding-right: @card-padding;
+   @media (max-width: @screen-sm-min)
+   {
+      padding-bottom: @card-padding-mobile;
+      padding-left: @card-padding-mobile;
+      padding-right: @card-padding-mobile;
+   }
 }
 
 .card.padding-top
@@ -231,6 +238,15 @@ input[type="submit"]
    }
 }
 
+.widget
+{
+    hr
+    {
+        color: black;
+        border-color: black;
+    }
+}
+
 #mc-embedded-subscribe-form
 {
    .form-inline;
@@ -392,6 +408,24 @@ input[type="submit"]
 .wp-caption-text, .thumbnail .caption
 {
    color: white;
+}
+
+.post img
+{
+    @media (max-width: @screen-sm-min)
+    {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+.sidebar img
+{
+    @media (max-width: @screen-sm-min)
+    {
+        width: 100% !important;
+        height: auto !important;
+    }
 }
 
 /* ==========================================================================
